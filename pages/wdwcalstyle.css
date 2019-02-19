@@ -1,0 +1,41 @@
+body{
+background-color:#000000;
+}
+.weather{
+ display:inline;
+ position: fixed;
+  top: 20%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+#calbut{
+ width:100%;
+}
+#week-cal{
+float:left;
+line-height:40px;
+width: 35%;
+margin-bottom:40px;
+padding:10;
+}
+#week-cal1{
+float:right;
+line-height:40px;
+width: 35%;
+margin-bottom:40px;
+margin-top:0;
+padding:10;
+}
+
+#day-cal{
+background-color:#ff0000;
+color: #000000;
+border:1px solid;
+border-bottom:1px solid;
+
+}
+
+#day{
+display:inline;
+}
