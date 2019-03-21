@@ -97,4 +97,12 @@ main {
   border-right: 0;
 }
 
- 
+ .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: #efefef;
+    text-align: center;
+}
