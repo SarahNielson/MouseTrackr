@@ -8,26 +8,26 @@
 
 <nav>
 <ul>
-  <li><a href="index.html">Home</a></li>
+  <li><a href="index.php">Home</a></li>
   <li class="dropdown">
-    <a href="wdwcalendar.html" class="dropbtn">Walt Disney World Resort</a>
+    <a href="wdwcalendar.php" class="dropbtn">Walt Disney World Resort</a>
     <div class="dropdown-content">
-      <a href="mk.html">Magic Kingdom</a>
-      <a href="epcot.html">Epcot</a>
-      <a href="ak.html">Animal Kingdom</a>
-      <a href="hs.html">Hollywood Studios</a>
+      <a href="mk.php">Magic Kingdom</a>
+      <a href="epcot.php">Epcot</a>
+      <a href="ak.php">Animal Kingdom</a>
+      <a href="hs.php">Hollywood Studios</a>
     </div> </li>
-  <li class="dropdown"><a class="active" href="dlcalendar.html">Disneyland Resort</a>
+  <li class="dropdown"><a class="active" href="dlcalendar.php">Disneyland Resort</a>
 <div class="dropdown-content">
-      <a href="dlp.html">Disneyland Park</a>
-      <a href="ca.html">California Adventure</a>
+      <a href="dlp.php">Disneyland Park</a>
+      <a href="ca.php">California Adventure</a>
     </div> </li></li>
-  <li><a href="forum.html">Forums</a></li>
-  <li style="float:right"><a href="about.html">Account</a></li>
+  <li><a href="forum.php">Forums</a></li>
+  <li style="float:right"><a href="about.php">Account</a></li>
 </ul>
 </nav>
 <div id="week-cal">
-<form action="dlp.html">
+<form action="dlp.php">
    <button id="calbut">Disneyland Park</button>
 </form>
 <div id="day-cal"><div id="day">Mo:</div> [Park Hours]</div>
@@ -39,7 +39,7 @@
 <div id="day-cal"><div id="day">Su:</div> </div>
 </div>
 <div id="week-cal1">
-<form action="ca.html">
+<form action="ca.php">
    <button id="calbut">California Adventure</button>
 </form>
 <div id="day-cal"><div id="day">Mo:</div> [Park Hours]</div>
@@ -51,7 +51,7 @@
 <div id="day-cal"><div id="day">Su:</div> </div>
 </div>
 
-<div class="footer">FOOTER</div>
+<?php require 'footer.html';?>
 <div class="weather">
 <!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/anaheim-1362"><img src="https://w.bookcdn.com/weather/picture/4_1362_0_1_137AE9_275_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=14027"  alt="booked.net"/></a><!-- weather widget end -->
 </div>
