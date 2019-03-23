@@ -9,8 +9,8 @@ session_start();
   <body>
     <h1>Login Page</h1>
     <form method="post" action="handler.php">
-      <div>Username: <input type="text" name="username"></div>
-      <div>Password: <input type="password" name="password"></div>
+      <div>Username: <input type="text" id="username" name="username"></div>
+      <div>Password: <input type="password" id="password" name="password"></div>
 		<?php
       		if (isset($_SESSION['message'])) {
         	echo "<div id='message'>" . $_SESSION['message'] . "</div>";
