@@ -1,9 +1,12 @@
 <?php
+  session_start();
   // Pretend i'm looking this up in a database
   $password_in_the_database = "abc123";
   if ($password_in_the_database != $_POST["password"]) {
-    header("Location: about.html");
+    $_SESSION['message'] = "Error, the password was incorrect.";
+    header("Location: about.php");
     exit();
   } else {
-    header("Location: student_list.php");
+    $_SESSION['logged_in'] = true;
+    header("Location: index.php");
   }
