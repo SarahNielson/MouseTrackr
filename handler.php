@@ -6,19 +6,19 @@
   require_once "User.php";
 	$user1 = new User("sarah", "123abc");
 	$user2 = new User("other", "abc123");
- // if (($password_in_the_database != $_POST["password"])|| $username_in_the_database!= $_POST["username"]) {
-  //  $_SESSION['message'] = "Error: the information was incorrect.";
-  //  header("Location: about.php");
- //   exit();
-//  } else {
- //   $_SESSION['logged_in'] = true;
- //   header("Location: index.php");
- // }
-if (!($user2->isPasswordValid("abc123"))) {
- 	$_SESSION['message'] = "Error: the information was incorrect.";
-  	header("Location: about.php");
-	exit();
+  if (($user2->password != $_POST["password"])) {
+    $_SESSION['message'] = "Error: the information was incorrect.";
+    header("Location: about.php");
+    exit();
   } else {
-	$_SESSION['logged_in'] = true;
- 	header("Location: index.php");
+    $_SESSION['logged_in'] = true;
+    header("Location: index.php");
   }
+//if (!($user2->isPasswordValid("abc123"))) {
+ //	$_SESSION['message'] = "Error: the information was incorrect.";
+  //	header("Location: about.php");
+//	exit();
+//  } else {
+//	$_SESSION['logged_in'] = true;
+ //	header("Location: index.php");
+ // }
