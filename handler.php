@@ -14,6 +14,11 @@
  //   $_SESSION['logged_in'] = true;
  //   header("Location: index.php");
  // }
-if ($user2->isPasswordValid("abc123")) {
-  echo "access granted";
-}
+if (!($user2->isPasswordValid("abc123"))) {
+ 	$_SESSION['message'] = "Error: the information was incorrect.";
+  	header("Location: about.php");
+	exit();
+  } else {
+	$_SESSION['logged_in'] = true;
+ 	header("Location: index.php");
+  }
