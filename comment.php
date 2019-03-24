@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once 'Dao.php';
+   $dao = new Dao();
 ?>
 
 <html>
@@ -22,10 +24,8 @@ session_start();
     </form>
 
    <?php
-   require_once 'Dao.php';
-   $dao = new Dao();
    $comments = $dao->getComments();
-   echo "<table id='comments'>";
+   echo "<table>";
    foreach ($comments as $comment) {
      echo "<tr><td>" . htmlspecialchars($comment['comment']) . "</td><td>{$comment['date_created']}</td></tr>";
    }
