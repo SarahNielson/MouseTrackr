@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'Dao.php';
+require_once 'Dao.php';
    $dao = new Dao();
 ?>
 
@@ -27,7 +27,7 @@ include_once 'Dao.php';
    $comments = $dao->getComments();
    echo "<table>";
    foreach ($comments as $comment) {
-     echo "<tr><td>" . htmlspecialchars($comment['comment']) . "</td><td>{$comment['date_created']}</td></tr>";
+     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>";
    }
    echo "</table>";
    ?>
