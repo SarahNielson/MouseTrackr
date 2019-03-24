@@ -1,0 +1,25 @@
+table, td, th { 
+  border: 2px solid black; 
+}
+td, th {
+  padding: 5px 10px 10px 10px;
+}
+
+table { 
+  border-collapse: collapse; 
+}
+
+#message {
+  width: 300px;
+  padding: 10 10;
+  margin: 10 10;
+  color: white;
+}
+
+.good {
+  background-color: green;
+}
+
+.bad {
+  background-color: red;
+}
