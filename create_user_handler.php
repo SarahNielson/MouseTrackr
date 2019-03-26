@@ -26,13 +26,10 @@ if (!$valid) {
 }
 //echo "CONGRATS YOU CREATE A USER";
 include("Dao.php");
-	try {
+	
       $dao = new Dao();
       $dao->createUser($username, $email, $password1);
-    } catch (Exception $e) {
-      var_dump($e);
-      die;
-    }
+   
 
 exit;
 ?>
