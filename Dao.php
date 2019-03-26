@@ -43,4 +43,15 @@ protected $logger;
     $q->bindParam(":comment", $comment);
     $q->execute();
   }
+
+ public function createUser ($userName, $email, $password) {
+    $this->logger->LogInfo("Saving a user [{$userName}]");
+    $conn = $this->getConnection();
+    $saveQuery = "insert into user (name, email, password) values (:name, :email, :password)";
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":name", $userName);
+    $q->bindParam(":email", $email);
+    $q->bindParam(":password", $password);
+    $q->execute();
+  }
 ?>
