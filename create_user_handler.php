@@ -25,11 +25,15 @@ if (!$valid) {
     exit();
 }
 //echo "CONGRATS YOU CREATE A USER";
-include("Dao.php");
-	
+require_once "Dao.php";
+	try{
       $dao = new Dao();
       $dao->createUser($username, $email, $password1);
-   
+header("Location: about.php");
+    } catch (Exception $e) {
+      var_dump($e);
+      die;
+    }
 
 exit;
 ?>
