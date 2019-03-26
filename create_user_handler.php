@@ -25,15 +25,13 @@ if (!$valid) {
     exit();
 }
 
-if($valid){
 	try {
       $dao = new Dao();
-      $dao->createUser($username, $password1, $email);
+      $dao->createUser($username, $email, $password1);
     } catch (Exception $e) {
       var_dump($e);
       die;
     }
-}
 echo "CONGRATS YOU CREATE A USER";
 // TODO insert stuff into a user table in the database..
 exit;
