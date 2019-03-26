@@ -24,8 +24,9 @@ if (!$valid) {
     header("Location: create_user.php");
     exit();
 }
-echo "CONGRATS YOU CREATE A USER";
 require_once "Dao.php";
+echo "CONGRATS YOU CREATE A USER";
+
 	try{
       $dao = new Dao();
       $dao->createUser($username, $email, $password1);
