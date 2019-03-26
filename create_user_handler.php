@@ -24,6 +24,7 @@ if (!$valid) {
     header("Location: create_user.php");
     exit();
 }
+echo "CONGRATS YOU CREATE A USER";
 include("Dao.php");
 	try {
       $dao = new Dao();
@@ -32,8 +33,7 @@ include("Dao.php");
       var_dump($e);
       die;
     }
-}
-echo "CONGRATS YOU CREATE A USER";
+
 // TODO insert stuff into a user table in the database..
 exit;
 ?>
