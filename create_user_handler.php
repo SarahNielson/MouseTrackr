@@ -10,6 +10,10 @@ if (empty($username)) {
   $messages[] = "Please enter a username";
   $valid = false;
 }
+if (empty($email)) {
+  $messages[] = "Please enter an email";
+  $valid = false;
+}
 if ($password1 != $password2) {
   $messages[] = "Passwords don't match";
   $valid = false;
