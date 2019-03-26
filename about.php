@@ -19,6 +19,9 @@ session_start();
      		 ?>
       <div><input type="submit" value="Login"></div>
     </form>
+<form method="post" action="create_user.php">
+<div><input type="submit" value="New User"></div>
+ </form>
   </body>
 
 
