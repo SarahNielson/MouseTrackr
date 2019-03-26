@@ -31,6 +31,7 @@ protected $logger;
   }
   public function getUser ($userName) {
     $conn = $this->getConnection();
+	return $conn->query("select * from user", PDO::FETCH_ASSOC);
   }
   public function saveComment ($comment) {
     $this->logger->LogInfo("Saving a comment [{$comment}]");
