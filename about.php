@@ -9,7 +9,8 @@ session_start();
   <body>
     <h1>Login Page</h1>
     <form method="post" action="handler.php">
-      <div>Username: <input type="text" id="username" name="username"></div>
+<div><label for="username">Username:</label>
+      Username: <input type="text" id="username" name="username"></div>
       <div>Password: <input type="password" id="password" name="password"></div>
 		<?php
       		if (isset($_SESSION['message'])) {
