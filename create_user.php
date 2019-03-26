@@ -5,7 +5,7 @@ session_start();
 
 <html>
   <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="createustyle.css">
   </head>
   <body>
     <h1>Create a User</h1>
