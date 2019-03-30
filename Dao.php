@@ -28,7 +28,7 @@ public function getConnection(){
  // }
   public function getComments () {
     $conn = $this->getConnection();
-    return $conn->query("SELECT * FROM comment", PDO::FETCH_ASSOC);
+    return $conn->query("SELECT * FROM comment order by date_created des", PDO::FETCH_ASSOC);
   }
   public function getUser ($email, $password) {
     $conn = $this->getConnection();
@@ -36,7 +36,7 @@ public function getConnection(){
   }
   public function saveComment ($comment) {
     $conn = $this->getConnection();
-    $saveQuery = "insert into comment (comment_content) values (:comment_content)";
+    $saveQuery = "insert into comment values (1, GETDATE(), :comment_content)";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":comment_content", $comment);
     $q->execute();
