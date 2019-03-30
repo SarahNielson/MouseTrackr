@@ -6,6 +6,7 @@ if (140 < strlen($comment)) {
   //echo "comment was too long. please shorten it.";
  $_SESSION['good'] = false;
   $_SESSION['message'] = "Comment was too long. Please shorten it.";
+header("Location: forum.php");
   exit;
 }
 if (0 >= strlen($comment)) {
