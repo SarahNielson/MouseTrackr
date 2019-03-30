@@ -36,7 +36,7 @@ public function getConnection(){
   }
   public function saveComment ($comment) {
     $conn = $this->getConnection();
-    $saveQuery = "insert into comment values (1, GETDATE(), :comment_content)";
+    $saveQuery = "insert into comment (comment_id, date_created, comment_content) values (1, CURRENT_TIMESTAMP, :comment_content)";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":comment_content", $comment);
     $q->execute();
