@@ -1,5 +1,5 @@
 table, td, th { 
-  border: 2px solid red; 
+  border: 2px solid gray; 
 }
 td, th {
   padding: 5px 10px 10px 10px;
@@ -26,5 +26,8 @@ background-color: white;
 }
 
 .comhead{
+color:white;
+}
+.comment{
 color:white;
 }
