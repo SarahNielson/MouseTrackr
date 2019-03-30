@@ -31,12 +31,10 @@ require_once 'Dao.php';
   <li style="float:right"><a href="about.php">Account</a></li>
 </ul>
 </nav>
+ <body>
 <?php require 'footer.html';?>
 <div class="forum">Recent Comments:</div>
-<form action="comment.php">
-   <button id="calbut">Add comment</button>
-</form>
- <body>
+
  <?php
    $comments = $dao->getComments();
    echo "<table id='comments'>";
