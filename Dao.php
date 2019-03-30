@@ -28,7 +28,7 @@ public function getConnection(){
  // }
   public function getComments () {
     $conn = $this->getConnection();
-    return $conn->query("select * from comment order by date_created", PDO::FETCH_ASSOC);
+    return $conn->query("select * from comment order by date_created desc", PDO::FETCH_ASSOC);
   }
   public function getUser ($email, $password) {
     $conn = $this->getConnection();
