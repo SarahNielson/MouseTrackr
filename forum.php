@@ -39,7 +39,7 @@ require_once 'Dao.php';
  <body>
     <form method="post" action="comment_handler.php">
       <div class="comment">Add a comment: <input type="text" name="comment"></div>
-      <div><input type="submit" value="Submit"></div>
+      <div class= "but"><input type="submit" value="Submit"></div>
       <?php
       if (isset($_SESSION['message'])) {
         $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
