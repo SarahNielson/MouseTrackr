@@ -38,7 +38,7 @@ require_once 'Dao.php';
 </form>
  <body>
     <form method="post" action="comment_handler.php">
-      <div id="comment">comment: <input type="text" name="comment"></div>
+      <div class="comment">Add a comment: <input type="text" name="comment"></div>
       <div><input type="submit" value="Submit"></div>
       <?php
       if (isset($_SESSION['message'])) {
