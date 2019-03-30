@@ -17,5 +17,5 @@ $dao = new Dao();
 $dao->saveComment($comment);
 $_SESSION['message'] = "Thanks for posting!";
 $_SESSION['good'] = true;
-header('Location: comment.php');
+header('Location: forum.php');
 exit;
