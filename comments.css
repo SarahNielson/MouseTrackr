@@ -8,6 +8,7 @@ td, th {
 table { 
   border-collapse: collapse; 
 background-color: white;
+padding: 10 10;
 }
 
 #message {
