@@ -1,3 +1,63 @@
-<?php 
-include_once("forum.html");
+<?php
+session_start();
+require_once 'Dao.php';
+   $dao = new Dao();
 ?>
+
+<html>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<head> 
+    <link rel="stylesheet" href="style.css">  
+<title>MouseTrackr</title> </head>
+<div class="header">Mouse Trackr<img src="d.jpg" id="logo"></div>
+<nav>
+<ul>
+  <li><a href="index.php">Home</a></li>
+  <li class="dropdown">
+    <a href="wdwcalendar.php" class="dropbtn">Walt Disney World Resort</a>
+    <div class="dropdown-content">
+      <a href="mk.php">Magic Kingdom</a>
+      <a href="epcot.php">Epcot</a>
+      <a href="ak.php">Animal Kingdom</a>
+      <a href="hs.php">Hollywood Studios</a>
+    </div> </li>
+  <li class="dropdown"><a href="dlcalendar.php">Disneyland Resort</a>
+<div class="dropdown-content">
+      <a href="dlp.php">Disneyland Park</a>
+      <a href="ca.php">California Adventure</a>
+    </div> </li></li>
+  <li><a class="active" href="forum.php">Forums</a></li>
+  <li style="float:right"><a href="about.php">Account</a></li>
+</ul>
+</nav>
+<?php require 'footer.html';?>
+<div class="forum">[FORUMS HERE]</div>
+<form action="comment.php">
+   <button id="calbut">Add comment</button>
+</form>
+ <body>
+    <h1>Recent Comments</h1>
+    <form method="post" action="comment_handler.php">
+      <div>comment: <input type="text" name="comment"></div>
+      <div><input type="submit" value="Submit"></div>
+      <?php
+      if (isset($_SESSION['message'])) {
+        $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
+        echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
+      }
+      unset($_SESSION['message']);
+      ?>
+
+    </form>
+
+   <?php
+   $comments = $dao->getComments();
+   echo "<table id='comments'>";
+   foreach ($comments as $comment) {
+     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>";
+   }
+   echo "</table>";
+   ?>
+  </body>
+</html>
+
