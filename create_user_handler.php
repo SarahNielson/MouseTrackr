@@ -30,7 +30,7 @@ if (!$valid) {
 }
 require_once 'Dao.php';
 //echo "CONGRATS YOU CREATE A USER";
-//$dao = new Dao();
+$dao = new Dao();
 //$dao->createUser ($username, $email, $password1);
 header("Location: about.php");
 
