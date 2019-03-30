@@ -37,10 +37,14 @@ $errors = array(); /* declare the array for later use */
             echo '</ul>';
         }else{
 	$dao = new Dao();
-	$dao->getUser ($email, $password);
+	$user= $dao->getUser ($email, $password);
    	 $_SESSION['logged_in'] = true;
-    	header("Location: index.php");	
-
+    	//header("Location: index.php");	
+	echo "<table id='user'>";
+   	foreach ($user as $use) {
+     	echo "<tr><td>" . htmlspecialchars($use['email']) . "</td><td>{$use['password']}</td></tr>";
+   }
+echo "</table>";
 	}
 
 
