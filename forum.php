@@ -32,14 +32,13 @@ require_once 'Dao.php';
 </ul>
 </nav>
 <?php require 'footer.html';?>
-<div class="forum">[FORUMS HERE]</div>
+<div class="forum">Recent Comments:</div>
 <form action="comment.php">
    <button id="calbut">Add comment</button>
 </form>
  <body>
-    <h1>Recent Comments</h1>
     <form method="post" action="comment_handler.php">
-      <div>comment: <input type="text" name="comment"></div>
+      <div id="comment">comment: <input type="text" name="comment"></div>
       <div><input type="submit" value="Submit"></div>
       <?php
       if (isset($_SESSION['message'])) {
