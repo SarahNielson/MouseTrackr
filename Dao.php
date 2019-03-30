@@ -35,11 +35,10 @@ public function getConnection(){
 	 return $conn->query("select *  from user where email = {$email} and password ={$password}", PDO::FETCH_ASSOC);
   }
   public function saveComment ($comment) {
-    //$this->logger->LogInfo("Saving a comment [{$comment}]");
     $conn = $this->getConnection();
     $saveQuery = "insert into comment (comment_content) values (:comment_content)";
     $q = $conn->prepare($saveQuery);
-    $q->bindParam(":comment", $comment);
+    $q->bindParam(":comment_content", $comment);
     $q->execute();
   }
 

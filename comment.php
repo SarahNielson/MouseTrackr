@@ -25,7 +25,7 @@ require_once 'Dao.php';
 
    <?php
    $comments = $dao->getComments();
-   echo "<table>";
+   echo "<table id='comments'>";
    foreach ($comments as $comment) {
      echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>";
    }
