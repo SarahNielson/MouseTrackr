@@ -37,6 +37,14 @@ require_once 'Dao.php';
    <button id="calbut">Add comment</button>
 </form>
  <body>
+ <?php
+   $comments = $dao->getComments();
+   echo "<table id='comments'>";
+   foreach ($comments as $comment) {
+     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>";
+   }
+   echo "</table>";
+   ?>
     <form method="post" action="comment_handler.php">
       <div class="comment">Add a comment: <input type="text" name="comment"></div>
       <div class= "but"><input type="submit" value="Submit"></div>
@@ -50,14 +58,7 @@ require_once 'Dao.php';
 
     </form>
 
-   <?php
-   $comments = $dao->getComments();
-   echo "<table id='comments'>";
-   foreach ($comments as $comment) {
-     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>";
-   }
-   echo "</table>";
-   ?>
+  
   </body>
 </html>
 
