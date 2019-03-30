@@ -37,7 +37,7 @@ public function getConnection(){
   public function saveComment ($comment) {
     //$this->logger->LogInfo("Saving a comment [{$comment}]");
     $conn = $this->getConnection();
-    $saveQuery = "insert into comment (comment_content, comment_id) values (:comment_content, 1)";
+    $saveQuery = "insert into comment (comment_id, comment_content) values (1, :comment_content)";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":comment", $comment);
     $q->execute();
