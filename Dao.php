@@ -6,8 +6,7 @@ class Dao{
 	private $user= "b7a361e8e4c438";
 	private $pass= "f6d4c086";
 public function getConnection(){
-	$conn= new PDO("mysql:host={$this->host};dbname={$this->db}",$this->user, $this->pass);
-	return $conn;
+	return new PDO("mysql:host={$this->host};dbname={$this->db}",$this->user, $this->pass);
 }
 
 //protected $logger;
