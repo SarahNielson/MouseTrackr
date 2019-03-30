@@ -7,7 +7,8 @@ require_once 'Dao.php';
 <html>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 <head> 
-    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="style.css"> 
+<link rel="stylesheet" href="comments.css"> 
 <title>MouseTrackr</title> </head>
 <div class="header">Mouse Trackr<img src="d.jpg" id="logo"></div>
 <nav>
