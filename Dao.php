@@ -1,4 +1,5 @@
 <?php
+require_once 'KLogger.php';
 class Dao{
 	private $host= "us-cdbr-iron-east-03.cleardb.net";
 	private $db= "heroku_ded9546adc97a47";
@@ -6,8 +7,7 @@ class Dao{
 	private $pass= "f6d4c086";
 	public function getConnection(){
 		return new PDO("mysql:host={$this->host};dbname={$this->db}",$this->user, $this->pass);
-	}
-}
+	
 
 protected $logger;
   public function __construct () {
@@ -55,4 +55,5 @@ protected $logger;
     $q->bindParam(":password", $password);
     $q->execute();
   }
+}
 ?>
