@@ -32,8 +32,9 @@ public function getConnection(){
   }
   public function getUser ($email, $password) {
     $conn = $this->getConnection();
-	 return $conn->query("select *  from user where email = {$email} and password ={$password}", PDO::FETCH_ASSOC);
+	 return $conn->query("select *  from user", PDO::FETCH_ASSOC);
   }
+//where email = {$email} and password ={$password}
   public function saveComment ($comment) {
     $conn = $this->getConnection();
     $saveQuery = "insert into comment (date_created, comment_content) values (CURRENT_TIMESTAMP, :comment_content)";
