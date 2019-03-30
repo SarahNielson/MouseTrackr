@@ -1,5 +1,5 @@
 table, td, th { 
-  border: 2px solid black; 
+  border: 2px solid red; 
 }
 td, th {
   padding: 5px 10px 10px 10px;
@@ -7,13 +7,14 @@ td, th {
 
 table { 
   border-collapse: collapse; 
+background-color: white;
 }
 
 #message {
   width: 300px;
   padding: 10 10;
   margin: 10 10;
-  color: white;
+  color: black;
 }
 
 .good {
