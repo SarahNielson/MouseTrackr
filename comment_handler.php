@@ -9,7 +9,7 @@ if (64 < strlen($comment)) {
 if (0 >= strlen($comment)) {
   $_SESSION['good'] = false;
   $_SESSION['message'] = "Please enter a comment";
-  header("Location: comment.php");
+  header("Location: forum.php");
   exit;
 }
 require_once 'Dao.php';
