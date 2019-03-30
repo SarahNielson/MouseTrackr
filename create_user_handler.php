@@ -14,6 +14,10 @@ if (empty($email)) {
   $messages[] = "Please enter an email";
   $valid = false;
 }
+if (empty($password1)) {
+  $messages[] = "Please set a password";
+  $valid = false;
+}
 if ($password1 != $password2) {
   $messages[] = "Passwords don't match";
   $valid = false;
@@ -25,7 +29,7 @@ if (!$valid) {
     exit();
 }
 require_once "Dao.php";
-echo "CONGRATS YOU CREATE A USER";
+//echo "CONGRATS YOU CREATE A USER";
 
 	try{
       $dao = new Dao();
