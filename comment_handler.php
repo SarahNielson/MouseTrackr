@@ -2,8 +2,10 @@
 session_start();
 $comment = $_POST['comment'];
 // Good place to validate
-if (64 < strlen($comment)) {
-  echo "comment was too long. please shorten it.";
+if (140 < strlen($comment)) {
+  //echo "comment was too long. please shorten it.";
+ $_SESSION['good'] = false;
+  $_SESSION['message'] = "Comment was too long. Please shorten it.";
   exit;
 }
 if (0 >= strlen($comment)) {
