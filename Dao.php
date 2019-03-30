@@ -30,9 +30,9 @@ public function getConnection(){
     $conn = $this->getConnection();
     return $conn->query("SELECT * FROM comment", PDO::FETCH_ASSOC);
   }
-  public function getUser ($userName) {
+  public function getUser ($email, $password) {
     $conn = $this->getConnection();
-	 return $conn->query("select *  from user where name = {$userName}", PDO::FETCH_ASSOC);
+	 return $conn->query("select *  from user where email = {$email} and password ={$password}", PDO::FETCH_ASSOC);
   }
   public function saveComment ($comment) {
     $this->logger->LogInfo("Saving a comment [{$comment}]");
