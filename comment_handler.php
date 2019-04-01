@@ -16,7 +16,7 @@ if (0 >= strlen($comment)) {
   exit;
 }
   
-        if(!isset($_SESSION['email']))
+        if($_SESSION['logged_in'] = false;)
         {
 $_SESSION['good'] = false;
   $_SESSION['message'] = "Not signed in";
