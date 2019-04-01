@@ -39,6 +39,8 @@ $errors = array(); /* declare the array for later use */
 	$dao = new Dao();
 	$user= $dao->getUser ($email, $password);
    	 $_SESSION['logged_in'] = true;
+	$email = $_SESSION['email'];
+	$password = $_SESSION['password'];
     	//header("Location: index.php");
 echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
 	echo "<table id='user'>";
