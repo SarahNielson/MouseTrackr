@@ -5,12 +5,34 @@ session_start();
 <head>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="login.css">
+
+    <link rel="stylesheet" href="style.css"> 
   </head>
+<nav>
+<ul>
+  <li><a href="index.php">Home</a></li>
+  <li class="dropdown">
+    <a href="wdwcalendar.php" class="dropbtn">Walt Disney World Resort</a>
+    <div class="dropdown-content">
+      <a href="mk.php">Magic Kingdom</a>
+      <a href="epcot.php">Epcot</a>
+      <a href="ak.php">Animal Kingdom</a>
+      <a href="hs.php">Hollywood Studios</a>
+    </div> </li>
+  <li class="dropdown"><a href="dlcalendar.php">Disneyland Resort</a>
+<div class="dropdown-content">
+      <a href="dlp.php">Disneyland Park</a>
+      <a href="ca.php">California Adventure</a>
+    </div> </li></li>
+  <li><a class="active" href="forum.php">Forums</a></li>
+  <li style="float:right"><a href="about.php">Account</a></li>
+</ul>
+</nav>
   <body>
     <h1>Login Page</h1>
     <form method="post" action="handler.php">
 <div><label for="email">Email:</label>
-      <input type="text" id="emaik" name="email"></div>
+      <input type="text" id="email" name="email"></div>
       <div>Password: <input type="password" id="password" name="password"></div>
 		<?php
       		if (isset($_SESSION['message'])) {
