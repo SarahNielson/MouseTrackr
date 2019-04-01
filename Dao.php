@@ -42,9 +42,9 @@ public function getUser ($email, $password) {
     $q->bindParam(":password", $password);
     $q->execute();
     $row = $q->fetch(PDO::FETCH_ASSOC);
-    if($row['num'] < 1){
-        die('That username doesn't exist!');
-    }
+   // if($row['num'] < 1){
+    //    die('That username doesn't exist!');
+   // }
   }
 
 //where email = {$email} and password ={$password}
@@ -65,10 +65,10 @@ public function getUser ($email, $password) {
     $q->bindParam(":email", $email);
     $q->bindParam(":password", $passwordHash);
     $q->execute();
- $row = $q->fetch(PDO::FETCH_ASSOC);
-    if($row['num'] > 0){
-        die('That username already exists!');
-  }
+// $row = $q->fetch(PDO::FETCH_ASSOC);
+  //  if($row['num'] > 0){
+   //     die('That username already exists!');
+ // }
    
 }
 ?>
