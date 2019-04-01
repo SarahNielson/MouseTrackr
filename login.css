@@ -10,11 +10,25 @@ div {
   width: 300px;
   padding: 10 10;
   margin: 10 10;
-  background-color: red;
   color: white;
+}
+.good {
+  background-color:#33ccff;
+}
+
+.bad {
+  background-color: red;
 }
 
 #logout {
   float:right;
   margin-right: 50px;
 }
+#create{
+color:blue;
+padding-top:50;
+padding-bottom:50;
+}
+
+#email{
+margin-top:20;

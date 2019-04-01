@@ -4,26 +4,21 @@
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-  // Pretend i'm looking this up in a database
-  //$username_in_the_database = "abc123";
-  //$password_in_the_database = "abc123";
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true){
-    echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
-}
 require_once "Dao.php";
 
 $errors = array(); /* declare the array for later use */
          
-        if(!isset($_POST['email']))
-        {
-            $errors[] = 'The username field must not be empty.';
-        }
+       
          
-        if(!isset($_POST['password']))
+        if(0 >= strlen($password) ||(0 >= strlen($email)))
         {
-            $errors[] = 'The password field must not be empty.';
+            $errors[] = 'The fields must not be empty.';
+          $_SESSION['form_input'] = $_POST;
+             $_SESSION['good'] = false;               
+            $_SESSION['message'] = "The the required fields must be filled.";
+		header('Location: about.php');
+		exit;
         }
          
         if(!empty($errors)) /*check for an empty array, if there are errors, they're in this array (note the ! operator)*/
@@ -36,33 +31,21 @@ $errors = array(); /* declare the array for later use */
             }
             echo '</ul>';
         }else{
-	$dao = new Dao();
-	$user= $dao->getUser ($email, $password);
-   	 $_SESSION['logged_in'] = true;
-    	//header("Location: index.php");	
-	echo "<table id='user'>";
-   	foreach ($user as $use) {
-     	echo "<tr><td>" . htmlspecialchars($use['email']) . "</td><td>{$use['password']}</td></tr>";
-   }
-echo "</table>";
-	}
+		$dao = new Dao();
+		$user= $dao->getUser ($email, $password);
+		if(empty($user)){
+        		$_SESSION['form_input'] = $_POST;
+			$_SESSION['good']= false;
+			$_SESSION['message']= 'Invalid login credentials';
+    			header("Location: about.php");
+		}else{
+   			 $_SESSION['logged_in'] = true;
+			$_SESSION['email']= $email;
+			$_SESSION['password']=$password;
+   		      //$_SESSION['username']=$dao->getUsers ($email, $password);
+			$_SESSION['good']= true;
+			$_SESSION['message']= 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum 			overview</a>.';
+    			header("Location: about.php");
 
-
-
-
-
-  //require_once "User.php";
-	//$user1 = new User($_POST["username"], $_POST["password"]);
-	//$user2 = new User("other", "abc123");
- // if (($password_in_the_database != $_POST["password"])||($username_in_the_database != $_POST["username"])) {
-  //  $_SESSION['message'] = "Error: the information was incorrect.";
-   // header("Location: about.php");
-  //  exit();
- // } else {
-//	$dao = new Dao();
-//	$dao->getUser ($email, $password);
- //   $_SESSION['logged_in'] = true;
- //echo 
-    //header("Location: index.php");
-//  }
+	}}
 ?>

@@ -1,14 +1,15 @@
 <html>
+<body background="dlr.jpg">
 <head>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="wdwcalstyle.css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 <title>Disneyland Resort</title> </head>
-<div class="header">Mouse Trackr<img src="d.jpg" alt="l" id="logo"></div>
+
 
 <nav>
 <ul>
-  <li><a href="index.php">Home</a></li>
+  <li><b><a href="index.php">MouseTrackr</a></b></li>
   <li class="dropdown">
     <a href="wdwcalendar.php" class="dropbtn">Walt Disney World Resort</a>
     <div class="dropdown-content">
@@ -22,7 +23,7 @@
       <a href="dlp.php">Disneyland Park</a>
       <a href="ca.php">California Adventure</a>
     </div> </li></li>
-  <li><a href="forum.php">Forums</a></li>
+  <li><a href="forum.php">Discussion</a></li>
   <li style="float:right"><a href="about.php">Account</a></li>
 </ul>
 </nav>
@@ -30,29 +31,30 @@
 <form action="dlp.php">
    <button id="calbut">Disneyland Park</button>
 </form>
-<div id="day-cal"><div id="day">Mo:</div> [Park Hours]</div>
-<div id="day-cal"><div id="day">Tu:</div> [Park Hours]</div>
-<div id="day-cal"><div id="day">We:</div> </div>
-<div id="day-cal"><div id="day">Th:</div> </div>
-<div id="day-cal"><div id="day">Fr:</div> </div>
-<div id="day-cal"><div id="day">Sa:</div> </div>
-<div id="day-cal"><div id="day">Su:</div> </div>
+<div id="day-cal"><div id="day">Mo:</div> 8AM-11PM</div>
+<div id="day-cal"><div id="day">Tu:</div> 8AM-11PM</div>
+<div id="day-cal"><div id="day">We:</div> 8AM-11PM</div>
+<div id="day-cal"><div id="day">Th:</div> 8AM-11PM</div>
+<div id="day-cal"><div id="day">Fr:</div> 8AM-12AM</div>
+<div id="day-cal"><div id="day">Sa:</div> 8AM-12AM</div>
+<div id="day-cal"><div id="day">Su:</div> 8AM-11PM</div>
 </div>
 <div id="week-cal1">
 <form action="ca.php">
    <button id="calbut">California Adventure</button>
 </form>
-<div id="day-cal"><div id="day">Mo:</div> [Park Hours]</div>
-<div id="day-cal"><div id="day">Tu:</div> [Park Hours]</div>
-<div id="day-cal"><div id="day">We:</div> </div>
-<div id="day-cal"><div id="day">Th:</div> </div>
-<div id="day-cal"><div id="day">Fr:</div> </div>
-<div id="day-cal"><div id="day">Sa:</div> </div>
-<div id="day-cal"><div id="day">Su:</div> </div>
+<div id="day-cal"><div id="day">Mo:</div> 8AM-10PM</div>
+<div id="day-cal"><div id="day">Tu:</div> 8AM-10PM</div>
+<div id="day-cal"><div id="day">We:</div> 8AM-10PM</div>
+<div id="day-cal"><div id="day">Th:</div> 8AM-10PM</div>
+<div id="day-cal"><div id="day">Fr:</div> 8AM-10PM</div>
+<div id="day-cal"><div id="day">Sa:</div> 8AM-10PM</div>
+<div id="day-cal"><div id="day">Su:</div> 8AM-10PM</div>
 </div>
 
 <?php require 'footer.html';?>
 <div class="weather">
 <!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/anaheim-1362"><img src="https://w.bookcdn.com/weather/picture/4_1362_0_1_137AE9_275_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=14027"  alt="booked.net"/></a><!-- weather widget end -->
 </div>
+</body>
 </html>

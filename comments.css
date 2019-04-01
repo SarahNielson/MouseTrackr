@@ -1,5 +1,5 @@
 table, td, th { 
-  border: 2px solid gray; 
+  border: 2px solid black; 
 }
 td, th {
   padding: 5px 10px 10px 10px;
@@ -27,13 +27,16 @@ margin: 10 10;
 }
 
 .comhead{
-color:white;
+padding-top:20;
+color:black;
 }
 div.comment{
-color:white;
+color:black;
+ font-weight: bold;
 padding: 10 10;
+margin-left:50;
 }
 
 .but{
-
+margin-left:70;
 }

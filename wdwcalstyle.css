@@ -1,6 +1,10 @@
-body{
-background-color:#000000;
-}
+Html, body {
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} 
+
 .weather{
  display:inline;
  position: fixed;
@@ -17,21 +21,23 @@ height:40px;
 #week-cal{
 float:left;
 line-height:40px;
-width: 35%;
+width: 25%;
 margin-bottom:40px;
 padding:10;
+text-align:center;
 }
 #week-cal1{
 float:right;
 line-height:40px;
-width: 35%;
+width: 25%;
 margin-bottom:40px;
 margin-top:0;
 padding:10;
+text-align:center;
 }
 
 #day-cal{
-background-color:#ff0000;
+background-color:#29C1F6;
 color: #000000;
 border:1px solid;
 border-bottom:1px solid;

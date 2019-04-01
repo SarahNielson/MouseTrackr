@@ -5,15 +5,16 @@ require_once 'Dao.php';
 ?>
 
 <html>
+<body background="forumback.jpg">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 <head> 
     <link rel="stylesheet" href="style.css"> 
 <link rel="stylesheet" href="comments.css"> 
 <title>MouseTrackr</title> </head>
-<div class="header">Mouse Trackr<img src="d.jpg" id="logo"></div>
+
 <nav>
 <ul>
-  <li><a href="index.php">Home</a></li>
+  <li><b><a href="index.php">MouseTrackr</a></b></li>
   <li class="dropdown">
     <a href="wdwcalendar.php" class="dropbtn">Walt Disney World Resort</a>
     <div class="dropdown-content">
@@ -27,36 +28,41 @@ require_once 'Dao.php';
       <a href="dlp.php">Disneyland Park</a>
       <a href="ca.php">California Adventure</a>
     </div> </li></li>
-  <li><a class="active" href="forum.php">Forums</a></li>
+  <li><a class="active" href="forum.php">Discussion</a></li>
   <li style="float:right"><a href="about.php">Account</a></li>
 </ul>
 </nav>
- <body>
+ 
 <?php require 'footer.html';?>
-<div class="forum">Recent Comments:</div>
+<h2 class="comhead">Recent Comments:</h2>
 
  <?php
    $comments = $dao->getComments();
    echo "<table id='comments'>";
    foreach ($comments as $comment) {
-     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>";
+     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td>";
    }
    echo "</table>";
+if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
+    echo '<span style="color:#660022;background-color:white;padding:5; margin:10;"><strong>You are not signed in. You can <a href="about.php">sign in</a> if you want to leave a comment.</strong></span>';
+
+}else{
    ?>
-    <form method="post" action="comment_handler.php">
-      <div class="comment">Add a comment: <input type="text" name="comment"></div>
-      <div class= "but"><input type="submit" value="Submit"></div>
+<form method="post" action="comment_handler.php">
+<div class="comment">Add a comment: <input type="text" name="comment">
+</div> <div class= "but"><input type="submit" value="Submit"></div>';
       <?php
-      if (isset($_SESSION['message'])) {
+    if (isset($_SESSION['message'])) {
         $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
         echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
       }
       unset($_SESSION['message']);
+$_SESSION["logged_in"] = true;
       ?>
 
     </form>
 
-  
+  <?php   }?>
   </body>
 </html>
 
