@@ -26,9 +26,9 @@ public function getUser ($email, $password) {
     $q->bindParam(":password", $password);
     $q->execute();
     $row = $q->fetch(PDO::FETCH_ASSOC);
-    if($row['num'] < 1){
-        die('That username doesn't exist!');
-    }
+    //if($row['num'] < 1){
+     //   die('That username doesn't exist!');
+    //}
   }
 
   public function saveComment ($comment) {
