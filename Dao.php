@@ -36,7 +36,15 @@ public function getConnection(){
   }
 public function getUser ($email, $password) {
     $conn = $this->getConnection();
-	 return $conn->query("SELECT COUNT(*) AS num FROM users WHERE $email = :email AND $password=:password", PDO::FETCH_ASSOC);
+	 $query= "SELECT COUNT(*) AS num FROM users WHERE $email = :email AND $password=:password";
+      $q = $conn->prepare($query);
+    $q->bindParam(":email", $email);
+    $q->bindParam(":password", $password);
+    $q->execute();
+    $row = $q->fetch(PDO::FETCH_ASSOC);
+    if($row['num'] < 1){
+        die('That username doesn't exist!');
+    }
   }
 
 //where email = {$email} and password ={$password}
@@ -50,12 +58,17 @@ public function getUser ($email, $password) {
 
  public function createUser ($userName, $email, $password) {
     $conn = $this->getConnection();
+    $passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
     $saveQuery = "insert into user (name, email, password) values (:name, :email, :password)";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":name", $userName);
     $q->bindParam(":email", $email);
-    $q->bindParam(":password", $password);
+    $q->bindParam(":password", $passwordHash);
     $q->execute();
+ $row = $q->fetch(PDO::FETCH_ASSOC);
+    if($row['num'] > 0){
+        die('That username already exists!');
   }
+   
 }
 ?>
