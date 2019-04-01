@@ -30,10 +30,15 @@ public function getConnection(){
     $conn = $this->getConnection();
     return $conn->query("select * from comment order by date_created desc", PDO::FETCH_ASSOC);
   }
-  public function getUser ($email, $password) {
+  public function getUsers ($email, $password) {
     $conn = $this->getConnection();
 	 return $conn->query("select *  from user", PDO::FETCH_ASSOC);
   }
+public function getUser ($email, $password) {
+    $conn = $this->getConnection();
+	 return $conn->query("SELECT COUNT(*) AS num FROM users WHERE $email = :email AND $password=:password", PDO::FETCH_ASSOC);
+  }
+
 //where email = {$email} and password ={$password}
   public function saveComment ($comment) {
     $conn = $this->getConnection();
