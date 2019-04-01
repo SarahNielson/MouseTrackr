@@ -46,23 +46,4 @@ $errors = array(); /* declare the array for later use */
    }
 echo "</table>";
 	}
-
-
-
-
-
-  //require_once "User.php";
-	//$user1 = new User($_POST["username"], $_POST["password"]);
-	//$user2 = new User("other", "abc123");
- // if (($password_in_the_database != $_POST["password"])||($username_in_the_database != $_POST["username"])) {
-  //  $_SESSION['message'] = "Error: the information was incorrect.";
-   // header("Location: about.php");
-  //  exit();
- // } else {
-//	$dao = new Dao();
-//	$dao->getUser ($email, $password);
- //   $_SESSION['logged_in'] = true;
- //echo 
-    //header("Location: index.php");
-//  }
 ?>
