@@ -39,7 +39,8 @@ $errors = array(); /* declare the array for later use */
 	$dao = new Dao();
 	$user= $dao->getUser ($email, $password);
    	 $_SESSION['logged_in'] = true;
-    	//header("Location: index.php");	
+    	//header("Location: index.php");
+echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
 	echo "<table id='user'>";
    	foreach ($user as $use) {
      	echo "<tr><td>" . htmlspecialchars($use['email']) . "</td><td>{$use['password']}</td></tr>";
