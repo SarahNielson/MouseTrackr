@@ -58,12 +58,12 @@ public function getUser ($email, $password) {
 
  public function createUser ($userName, $email, $password) {
     $conn = $this->getConnection();
-    $passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
+    //$passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
     $saveQuery = "insert into user (name, email, password) values (:name, :email, :password)";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":name", $userName);
     $q->bindParam(":email", $email);
-    $q->bindParam(":password", $passwordHash);
+    $q->bindParam(":password", $password);
     $q->execute();
 // $row = $q->fetch(PDO::FETCH_ASSOC);
   //  if($row['num'] > 0){
