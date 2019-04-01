@@ -14,7 +14,7 @@ session_start();
         <input value="<?php echo isset($_SESSION['form_input']['username']) ? $_SESSION['form_input']['username'] : ''; ?>" type="text" id="username" name="username"></div>
 
 <div><label for="email">Email:</label>
-        <input value="<?php echo isset($_SESSION['form_input']['email']) ? $_SESSION['form_input']['email'] : ''; ?>" type="text" id="email" name="email"></div>
+        <input value="<?php echo isset($_SESSION['form_input']['email']) ? $_SESSION['form_input']['email'] : ''; ?>" type="text" id="email" name="email" pattern= "^[\w]{1,}[\w.+-]{0,}@[\w-]{1,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"></div>
       <div><label for="password1">Password:</label> <input type="password" id="password1" name="password1"></div>
       <div><label for="password2">Retype Password:</label> <input type="password" id="password2" name="password2"></div>
       <?php
