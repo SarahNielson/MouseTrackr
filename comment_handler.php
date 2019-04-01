@@ -15,6 +15,12 @@ if (0 >= strlen($comment)) {
   header("Location: forum.php");
   exit;
 }
+  
+        if(!isset($_SESSION['email']))
+        {
+$_SESSION['good'] = false;
+  $_SESSION['message'] = "Not signed in";
+        }
 require_once 'Dao.php';
 $dao = new Dao();
 $dao->saveComment($comment);
