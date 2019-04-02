@@ -45,6 +45,9 @@ session_start();
 <form method="post" action="create_user.php">
 <div><input type="submit" value="New User"></div>
  </form>
+<form method="post" action="logout.php">
+<div><input type="submit" value="Logout"></div>
+ </form>
   </body>
 
 
