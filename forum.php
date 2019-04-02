@@ -10,7 +10,7 @@ require_once 'Dao.php';
     <link rel="stylesheet" href="style.css"> 
 <link rel="stylesheet" href="comments.css"> 
 <title>MouseTrackr</title> </head>
-<div class="header">Mouse Trackr<img src="d.jpg" id="logo"></div>
+
 <nav>
 <ul>
   <li><a href="index.php">Home</a></li>
