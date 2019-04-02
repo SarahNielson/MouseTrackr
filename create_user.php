@@ -28,5 +28,6 @@ session_start();
       ?>
       <div><input type="submit" value="Create User"></div>
     </form>
+<?php require 'footer.html';?>
   </body>
 </html>

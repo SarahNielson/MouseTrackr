@@ -50,5 +50,5 @@ session_start();
  </form>
   </body>
 
-
+<?php require 'footer.html';?>
 </html>
