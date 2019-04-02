@@ -1,6 +1,4 @@
-body{
-background-color:#000000;
-}
+
 .weather{
  display:inline;
  position: fixed;
@@ -31,7 +29,7 @@ padding:10;
 }
 
 #day-cal{
-background-color:#ff0000;
+background-color:#29C1F6;
 color: #000000;
 border:1px solid;
 border-bottom:1px solid;
