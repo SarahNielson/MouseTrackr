@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['logged_in'] = false;
 $comment = $_POST['comment'];
 // Good place to validate
 if (140 < strlen($comment)) {
@@ -16,14 +17,15 @@ if (0 >= strlen($comment)) {
   exit;
 }
   
-        if($_SESSION['logged_in'] = false)
-        {
-$_SESSION['good'] = false;
+  if($_SESSION['logged_in'] = false) {
+$_SESSION['good'] = false;               
   $_SESSION['message'] = "Not signed in";
+header("Location: forum.php");
+  exit;
         }
 require_once 'Dao.php';
 $dao = new Dao();
-$dao->saveComment($comment);
+$dao->saveComment($comment);             
 $_SESSION['message'] = "Thanks for posting!";
 $_SESSION['good'] = true;
 header('Location: forum.php');
