@@ -3,7 +3,11 @@ background-color:#000000;
 }
 .weather{
  display:inline;
- position: relative;
+ position: fixed;
+  top: 40%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 #calbut{
 margin-top:20px;
@@ -13,14 +17,14 @@ height:40px;
 #week-cal{
 float:left;
 line-height:40px;
-width: 35%;
+width: 25%;
 margin-bottom:40px;
 padding:10;
 }
 #week-cal1{
 float:right;
 line-height:40px;
-width: 35%;
+width: 25%;
 margin-bottom:40px;
 margin-top:0;
 padding:10;
