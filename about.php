@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
+    echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
+}
 ?>
 <html>
 <head>
@@ -43,7 +48,7 @@ session_start();
       <div><input type="submit" value="Login"></div>
     </form>
 <form method="post" action="create_user.php">
-<div><label>New here? </label><input type="submit" value="Create New User"></div>
+<div><label id="create">New here? </label><input type="submit" value="Create New User"></div>
  </form>
 <form method="post" action="logout.php">
 <div><input type="submit" value="Logout"></div>
