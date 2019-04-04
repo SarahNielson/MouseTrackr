@@ -9,16 +9,16 @@ require_once "Dao.php";
 
 $errors = array(); /* declare the array for later use */
          
-        if(!isset($_POST['email']))
+        if(0 >= strlen($email))
         {
             $errors[] = 'The username field must not be empty.';
 		$_SESSION['good'] = false;               
-            $_SESSION['message'] = "=The username field must not be empty";
+            $_SESSION['message'] = "=The email field must not be empty";
 	header('Location: about.php');
 		exit;
         }
          
-        if(!isset($_POST['password']))
+        if(0 >= strlen($password))
         {
             $errors[] = 'The password field must not be empty.';
              $_SESSION['good'] = false;               
