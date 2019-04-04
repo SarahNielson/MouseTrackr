@@ -9,20 +9,13 @@ require_once "Dao.php";
 
 $errors = array(); /* declare the array for later use */
          
-        if(0 >= strlen($email))
-        {
-            $errors[] = 'The username field must not be empty.';
-		$_SESSION['good'] = false;               
-            $_SESSION['message'] = "=The email field must not be empty";
-	header('Location: about.php');
-		exit;
-        }
+       
          
-        if(0 >= strlen($password))
+        if(0 >= strlen($password) ||(0 >= strlen($email)))
         {
-            $errors[] = 'The password field must not be empty.';
+            $errors[] = 'The fields must not be empty.';
              $_SESSION['good'] = false;               
-            $_SESSION['message'] = "=The password field must not be empty";
+            $_SESSION['message'] = "The fields must not be empty";
 		header('Location: about.php');
 		exit;
         }
@@ -43,6 +36,7 @@ $errors = array(); /* declare the array for later use */
 	$_SESSION['email']= $email;
 	$_SESSION['password']=$password;
      //$_SESSION['username']=htmlspecialchars($user['username']);
+$_SESSION['good']= true;
 $_SESSION['message']= 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';
     	header("Location: about.php");
 echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
