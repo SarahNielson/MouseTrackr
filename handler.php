@@ -41,6 +41,7 @@ $errors = array(); /* declare the array for later use */
    	 $_SESSION['logged_in'] = true;
 	$_SESSION['email']= $email;
 	$_SESSION['password']=$password;
+     $_SESSION['username']={$user['username']};
     	//header("Location: index.php");
 echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
 	echo "<table id='user'>";
