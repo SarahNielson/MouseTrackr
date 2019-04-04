@@ -35,12 +35,13 @@ $errors = array(); /* declare the array for later use */
 	$_SESSION['email']= $email;
 	$_SESSION['password']=$password;
      //$_SESSION['username']=htmlspecialchars($user['username']);
-    	header("Location: about.php");
+    	
 echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
 	echo "<table id='user'>";
    	foreach ($user as $use) {
      	echo "<tr><td>" . htmlspecialchars($use['email']) . "</td><td>{$use['password']}</td></tr>";
    }
 echo "</table>";
+header("Location: index.php");
 	}
 ?>
