@@ -15,7 +15,7 @@ $errors = array(); /* declare the array for later use */
         {
             $errors[] = 'The fields must not be empty.';
              $_SESSION['good'] = false;               
-            $_SESSION['message'] = "The fields must not be empty";
+            $_SESSION['message'] = "The the required fields must be filled.";
 		header('Location: about.php');
 		exit;
         }
