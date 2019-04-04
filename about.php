@@ -29,6 +29,12 @@ session_start();
   <li style="float:right"><a class="active" href="about.php">Account</a></li>
 </ul>
 </nav>
+<?php
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
+    echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
+}
+?>
   <body>
     <h1>Login:</h1>
     <form method="post" action="handler.php">
@@ -36,10 +42,6 @@ session_start();
       <input type="text" id="email" name="email"></div>
       <div>Password: <input type="password" id="password" name="password"></div>
 		<?php
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
-    echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
-}
       		if (isset($_SESSION['message'])) {
         	echo "<div id='message'>" . $_SESSION['message'] . "</div>";
      		 }
