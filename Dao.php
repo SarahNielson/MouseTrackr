@@ -31,7 +31,7 @@ $q->execute();
  // if( !$status )throw new Exception('',3);
    $rows=$q->rowCount();
 //if( !$rows > 0 )throw new Exception('',4);
-
+return $rows;
     $result = $q->fetchObject();
      $q->closeCursor();
 /* password_verify is available from PHP 5.5 onwards ~ I have 5.3.2 :( */
