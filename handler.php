@@ -32,6 +32,11 @@ $errors = array(); /* declare the array for later use */
         }else{
 	$dao = new Dao();
 	$user= $dao->getUser ($email, $password);
+	if(is_null($user)){
+	$_SESSION['good']= false;
+	$_SESSION['message']= 'Invalid login credentials';
+    	header("Location: about.php");
+	}
    	 $_SESSION['logged_in'] = true;
 	$_SESSION['email']= $email;
 	$_SESSION['password']=$password;
