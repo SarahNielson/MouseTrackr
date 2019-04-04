@@ -13,6 +13,13 @@ div {
   background-color: red;
   color: white;
 }
+.good {
+  background-color: green;
+}
+
+.bad {
+  background-color: red;
+}
 
 #logout {
   float:right;
