@@ -46,13 +46,9 @@ require_once 'Dao.php';
 if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
     echo 'You are not signed in, you can <a href="about.php">sign in</a> if you want.';
 }else{
-echo '
-
-    <form method="post" action="comment_handler.php">
-      <div class="comment">Add a comment: <input type="text" name="comment"></div>
-      <div class= "but"><input type="submit" value="Submit"></div>';
+echo '<form method="post" action="comment_handler.php"><div class="comment">Add a comment: <input type="text" name="comment"></div> <div class= "but"><input type="submit" value="Submit"></div>';
       //<?php
-      if (isset($_SESSION['message'])) {
+    if (isset($_SESSION['message'])) {
         $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
         echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
       }
