@@ -42,6 +42,6 @@ echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the fo
      	echo "<tr><td>" . htmlspecialchars($use['email']) . "</td><td>{$use['password']}</td></tr>";
    }
 echo "</table>";
-header("Location: index.php");
+header("Location: about.php");
 	}
 ?>
