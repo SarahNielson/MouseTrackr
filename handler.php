@@ -36,7 +36,7 @@ $errors = array(); /* declare the array for later use */
 	$_SESSION['good']= false;
 	$_SESSION['message']= 'Invalid login credentials';
     	header("Location: about.php");
-	}
+	}else{
    	 $_SESSION['logged_in'] = true;
 	$_SESSION['email']= $email;
 	$_SESSION['password']=$password;
@@ -51,5 +51,5 @@ echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the fo
    }
 echo "</table>";
 
-	}
+	}}
 ?>
