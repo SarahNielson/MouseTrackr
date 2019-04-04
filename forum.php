@@ -5,6 +5,7 @@ require_once 'Dao.php';
 ?>
 
 <html>
+<body background="forumback.jpg">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 <head> 
     <link rel="stylesheet" href="style.css"> 
@@ -31,7 +32,7 @@ require_once 'Dao.php';
   <li style="float:right"><a href="about.php">Account</a></li>
 </ul>
 </nav>
- <body>
+ 
 <?php require 'footer.html';?>
 <div class="forum">Recent Comments:</div>
 
