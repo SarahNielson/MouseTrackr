@@ -38,10 +38,7 @@ if ($q){
                             /* valid */
                              $_SESSION['email']=$email;
                              exit( header('Location: index.php') );
-          } else {
-                            /* bogus - invalid credentials */
-                           // throw new Exception('',5);
-    }
+          }
 }
    // $row = $q->fetch(PDO::FETCH_ASSOC);
    //if($row['num'] <1){
