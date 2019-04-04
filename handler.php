@@ -34,7 +34,7 @@ $errors = array(); /* declare the array for later use */
             echo '</ul>';
         }else{
 	$dao = new Dao();
-	$user= $dao->getUsers ($email, $password);
+	$user= $dao->getUser ($email, $password);
    	 $_SESSION['logged_in'] = true;
 	$_SESSION['email']= $email;
 	$_SESSION['password']=$password;
