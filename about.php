@@ -29,6 +29,10 @@ session_start();
   <li style="float:right"><a class="active" href="about.php">Account</a></li>
 </ul>
 </nav>
+
+  <body>
+    <h1>Login:</h1>
+    
 <?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
@@ -39,10 +43,6 @@ echo '<form method="post" action="create_user.php">
  </form>';
 }
 ?>
-  <body>
-    <h1>Login:</h1>
-    
-
 
 
  <form method="post" action="handler.php">
