@@ -12,11 +12,15 @@ $errors = array(); /* declare the array for later use */
         if(!isset($_POST['email']))
         {
             $errors[] = 'The username field must not be empty.';
+		$_SESSION['good'] = false;               
+            $_SESSION['message'] = "=The username field must not be empty";
         }
          
         if(!isset($_POST['password']))
         {
             $errors[] = 'The password field must not be empty.';
+             $_SESSION['good'] = false;               
+            $_SESSION['message'] = "=The password field must not be empty";
         }
          
         if(!empty($errors)) /*check for an empty array, if there are errors, they're in this array (note the ! operator)*/
