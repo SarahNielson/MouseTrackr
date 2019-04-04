@@ -20,14 +20,14 @@ public function getConnection(){
 
 public function getUser ($email, $password) {
     $conn = $this->getConnection();
-	return $conn->query("select * from user where email= {$email}", PDO::FETCH_ASSOC);
-//$saveQuery= ("SELECT COUNT(*) AS num FROM users WHERE email= {$email} AND password={$password}", PDO::FETCH_ASSOC);
-   //   $q = $conn->prepare($saveQuery);
+	//return $conn->query("select * from user where email= {$email}", PDO::FETCH_ASSOC);
+$saveQuery= ("SELECT COUNT(*) AS num FROM user WHERE email= {$email} AND password={$password}", PDO::FETCH_ASSOC);
+      $q = $conn->prepare($saveQuery);
    //$q->bindParam(":email", $email);
-   // $q->bindParam(":password", $password);
-   // $q->execute();
+    //$q->bindParam(":password", $password);
+    $q->execute();
    // $row = $q->fetch(PDO::FETCH_ASSOC);
-  // if($row['num'] <1){
+   //if($row['num'] <1){
         //die('That username doesn't exist!');
    // }else{
 	//return conn->$query= ("select * from user where email= {$email} and password={$password}", PDO::FETCH_ASSOC);
