@@ -1,3 +1,9 @@
+Html, body {
+  background-image: url('disney.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} 
 
 .weather{
  display:inline;
