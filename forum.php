@@ -44,8 +44,7 @@ require_once 'Dao.php';
    }
    echo "</table>";
 if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
-$_SESSION['message']= 'You are not signed in. You can <a href="about.php">sign in</a> if you want to leave a comment.';
-    //echo '<span style="color:#383838;"><strong>You are not signed in. You can <a href="about.php">sign in</a> if you want to //leave a comment.</strong></span>';
+    echo '<span style="color:#383838;background-color:white;"><strong>You are not signed in. You can <a href="about.php">sign in</a> if you want to leave a comment.</strong></span>';
 
 }else{
    ?>
