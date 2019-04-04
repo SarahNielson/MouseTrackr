@@ -43,6 +43,9 @@ require_once 'Dao.php';
      echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>";
    }
    echo "</table>";
+if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
+    echo 'You are not signed in, you can <a href="about.php">sign in</a> if you want.';
+}
    ?>
     <form method="post" action="comment_handler.php">
       <div class="comment">Add a comment: <input type="text" name="comment"></div>
