@@ -9,7 +9,7 @@ $password = $_POST['password'];
   //$password_in_the_database = "abc123";
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true){
+if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
     echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
 }
 require_once "Dao.php";
@@ -38,11 +38,12 @@ $errors = array(); /* declare the array for later use */
         }else{
 	$dao = new Dao();
 	$user= $dao->getUser ($email, $password);
+      if(!isset($_SESSION["logged_in"])){
    	 $_SESSION['logged_in'] = true;
 	$_SESSION['email']= $email;
 	$_SESSION['password']=$password;
      $_SESSION['username']=htmlspecialchars($user['username']);
-    	//header("Location: index.php");
+    	header("Location: about.php");
 echo 'Welcome, ' . $_SESSION['username'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
 	echo "<table id='user'>";
    	foreach ($user as $use) {
