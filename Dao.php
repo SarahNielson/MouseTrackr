@@ -38,7 +38,7 @@ if ($q){
 if($password == $result->password ) ){
                             /* valid */
                              $_SESSION['email']=$email;
-                             exit( header('Location: index.php') );
+                             //exit( header('Location: index.php') );
           }else{
 		$_SESSION['loggin_in']=false;
                              exit( header('Location: about.php') );
