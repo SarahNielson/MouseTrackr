@@ -51,7 +51,8 @@ echo '<form method="post" action="create_user.php">
       <div>Password: <input type="password" id="password" name="password"></div>
 		<?php
       		if (isset($_SESSION['message'])) {
-        	echo "<div id='message'>" . $_SESSION['message'] . "</div>";
+                $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
+        	echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
      		 }
       		unset($_SESSION['message']);
      		 ?>
