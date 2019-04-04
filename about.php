@@ -43,7 +43,7 @@ session_start();
       <div><input type="submit" value="Login"></div>
     </form>
 <form method="post" action="create_user.php">
-<div><input type="submit" value="New User"></div>
+<div><label>New here? </label><input type="submit" value="Create New User"></div>
  </form>
 <form method="post" action="logout.php">
 <div><input type="submit" value="Logout"></div>
