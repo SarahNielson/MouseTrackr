@@ -44,7 +44,7 @@ require_once 'Dao.php';
    }
    echo "</table>";
 if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
-    echo 'You are not signed in, you can <a href="about.php">sign in</a> if you want.';
+    echo '<strong>You are not signed in. You can <a href="about.php">sign in</a> if you want to leave a comment.</strong>';
 }else{
    ?>
 <form method="post" action="comment_handler.php">
