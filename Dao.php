@@ -41,7 +41,7 @@ if ($q){
                              //exit( header('Location: index.php') );
         //  }else{
 		//$_SESSION['logged_in']=false;
-                             exit( header('Location: about.php') );
+                           //  exit( header('Location: about.php') );
 		//}
 }
    // $row = $q->fetch(PDO::FETCH_ASSOC);
