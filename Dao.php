@@ -20,9 +20,9 @@ public function getConnection(){
 
 public function getUser ($email, $password) {
     $conn = $this->getConnection();
-	//return $conn->query("select * from user where email= {$email}", PDO::FETCH_ASSOC);
-$saveQuery= ("SELECT COUNT(*) AS num FROM user WHERE email= {$email} AND password={$password}", PDO::FETCH_ASSOC);
-      $q = $conn->prepare($saveQuery);
+	return $conn->query("select username, password from user where email= {$email}", PDO::FETCH_ASSOC);
+//$saveQuery= ("SELECT COUNT(*) AS num FROM user WHERE email= {$email} AND password={$password}", PDO::FETCH_ASSOC);
+     // $q = $conn->prepare($saveQuery);
    //$q->bindParam(":email", $email);
     //$q->bindParam(":password", $password);
     $q->execute();
