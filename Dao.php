@@ -35,14 +35,14 @@ if ($q){
      $q->closeCursor();
 /* password_verify is available from PHP 5.5 onwards ~ I have 5.3.2 :( */
  // if( $result && function_exists('password_verify') && password_verify( $password, $result->password ) ){
-if($password == $result->password ) ){
+//if($password == $result->password ) ){
                             /* valid */
-                             $_SESSION['email']=$email;
+                            // $_SESSION['email']=$email;
                              //exit( header('Location: index.php') );
-          }else{
-		$_SESSION['loggin_in']=false;
+        //  }else{
+		//$_SESSION['logged_in']=false;
                              exit( header('Location: about.php') );
-		}
+		//}
 }
    // $row = $q->fetch(PDO::FETCH_ASSOC);
    //if($row['num'] <1){
