@@ -45,7 +45,7 @@ public function getUser ($email, $password) {
   //  if($row['num'] > 0){
    //     die('That username already exists!');
 
-  }
+ // }
    
 }
 ?>
