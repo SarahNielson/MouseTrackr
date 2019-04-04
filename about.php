@@ -37,19 +37,7 @@ if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
 ?>
   <body>
     <h1>Login:</h1>
-    <form method="post" action="handler.php">
-<div><label for="email">Email:</label>
-      <input type="text" id="email" name="email"></div>
-      <div>Password: <input type="password" id="password" name="password"></div>
-		<?php
-      		if (isset($_SESSION['message'])) {
-        	echo "<div id='message'>" . $_SESSION['message'] . "</div>";
-     		 }
-      		unset($_SESSION['message']);
-     		 ?>
-      <div><input type="submit" value="Login"></div>
-    </form>
-<div>HEWLLOO</div>
+    
 
 <form method="post" action="create_user.php">
 <div><label id="create">New here? </label><input type="submit" value="Create New User"></div>
