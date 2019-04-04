@@ -31,7 +31,7 @@ $errors = array(); /* declare the array for later use */
             echo '</ul>';
         }else{
 	$dao = new Dao();
-	$user= $dao->getUsers ($email, $password);
+	$user= $dao->getUser ($email, $password);
 	if(empty($user)){
 	$_SESSION['good']= false;
 	$_SESSION['message']= 'Invalid login credentials';
