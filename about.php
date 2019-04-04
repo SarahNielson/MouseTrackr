@@ -24,12 +24,12 @@ session_start();
       <a href="dlp.php">Disneyland Park</a>
       <a href="ca.php">California Adventure</a>
     </div> </li></li>
-  <li><a href="forum.php">Forums</a></li>
+  <li><a href="forum.php">Discussion</a></li>
   <li style="float:right"><a class="active" href="about.php">Account</a></li>
 </ul>
 </nav>
   <body>
-    <h1>Login Page</h1>
+    <h1>Login:</h1>
     <form method="post" action="handler.php">
 <div><label for="email">Email:</label>
       <input type="text" id="email" name="email"></div>
