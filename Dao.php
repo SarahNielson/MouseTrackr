@@ -20,7 +20,7 @@ public function getConnection(){
 
 public function getUser ($email, $password) {
     $conn = $this->getConnection();
-	return conn->$query("select * from user", PDO::FETCH_ASSOC);
+	return $conn->query("select * from user", PDO::FETCH_ASSOC);
 
   }
 
