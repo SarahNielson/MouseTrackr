@@ -23,10 +23,11 @@ public function getUser ($email, $password) {
 	//return $conn->query("select username, password from user where email= {$email}", PDO::FETCH_ASSOC);
 $saveQuery= "select username, password from user where email= :email and password=:password";
       $q = $conn->prepare($saveQuery);
-if ($q){
+//if ($q){
    $q->bindParam(":email", $email);
     $q->bindParam(":password", $password);
-   $status= $q->execute();
+  // $status= $q->execute();
+$q->execute();
  // if( !$status )throw new Exception('',3);
    $rows=$q->rowCount();
 //if( !$rows > 0 )throw new Exception('',4);
@@ -43,7 +44,7 @@ if ($q){
 		//$_SESSION['logged_in']=false;
                            //  exit( header('Location: about.php') );
 		//}
-}
+//ifq}
    // $row = $q->fetch(PDO::FETCH_ASSOC);
    //if($row['num'] <1){
         //die('That username doesn't exist!');
