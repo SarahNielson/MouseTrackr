@@ -34,7 +34,7 @@ require_once 'Dao.php';
 </nav>
  
 <?php require 'footer.html';?>
-<div class="comhead">Recent Comments:</div>
+<h2 class="comhead">Recent Comments:</h2>
 
  <?php
    $comments = $dao->getComments();
