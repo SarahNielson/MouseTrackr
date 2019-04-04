@@ -43,7 +43,7 @@ $errors = array(); /* declare the array for later use */
 	$_SESSION['password']=$password;
      $_SESSION['username']=htmlspecialchars($user['username']);
     	//header("Location: index.php");
-echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
+echo 'Welcome, ' . $_SESSION['username'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
 	echo "<table id='user'>";
    	foreach ($user as $use) {
      	echo "<tr><td>" . htmlspecialchars($use['username']) . "</td><td>{$use['password']}</td></tr>";
