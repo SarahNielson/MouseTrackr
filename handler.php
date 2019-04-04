@@ -4,9 +4,6 @@
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-  // Pretend i'm looking this up in a database
-  //$username_in_the_database = "abc123";
-  //$password_in_the_database = "abc123";
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
@@ -37,17 +34,16 @@ $errors = array(); /* declare the array for later use */
             echo '</ul>';
         }else{
 	$dao = new Dao();
-	$user= $dao->getUser ($email, $password);
-      if(!isset($_SESSION["logged_in"])){
+	$user= $dao->getUsers ($email, $password);
    	 $_SESSION['logged_in'] = true;
 	$_SESSION['email']= $email;
 	$_SESSION['password']=$password;
-     $_SESSION['username']=htmlspecialchars($user['username']);
-    	header("Location: about.php");
-echo 'Welcome, ' . $_SESSION['username'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
+     //$_SESSION['username']=htmlspecialchars($user['username']);
+    	//header("Location: about.php");
+echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
 	echo "<table id='user'>";
    	foreach ($user as $use) {
-     	echo "<tr><td>" . htmlspecialchars($use['username']) . "</td><td>{$use['password']}</td></tr>";
+     	echo "<tr><td>" . htmlspecialchars($use['email']) . "</td><td>{$use['password']}</td></tr>";
    }
 echo "</table>";
 	}
