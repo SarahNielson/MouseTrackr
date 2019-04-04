@@ -27,7 +27,7 @@ require_once 'Dao.php';
       <a href="dlp.php">Disneyland Park</a>
       <a href="ca.php">California Adventure</a>
     </div> </li></li>
-  <li><a class="active" href="forum.php">Forums</a></li>
+  <li><a class="active" href="forum.php">Discussion</a></li>
   <li style="float:right"><a href="about.php">Account</a></li>
 </ul>
 </nav>
