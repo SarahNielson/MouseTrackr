@@ -47,7 +47,7 @@ echo '<form method="post" action="create_user.php">
 
  <form method="post" action="handler.php">
 <div><label for="email">Email:</label>
-      <input type="text" id="email" name="email"></div>
+      <input value="<?php echo isset($_SESSION['form_input']['email']) ? $_SESSION['form_input']['email'] : ''; ?>" type="text" id="email" name="email"></div>
       <div>Password: <input type="password" id="password" name="password"></div>
 		<?php
       		if (isset($_SESSION['message'])) {
