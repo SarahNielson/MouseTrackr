@@ -21,7 +21,7 @@ public function getConnection(){
 public function getUser ($email, $password) {
     $conn = $this->getConnection();
 	//return $conn->query("select username, password from user where email= {$email}", PDO::FETCH_ASSOC);
-$saveQuery= "select username, password from user where email= :email and password=:password";
+$saveQuery= "select username, password from user where email= :email and password= :password";
       $q = $conn->prepare($saveQuery);
 //if ($q){
    $q->bindParam(":email", $email);
