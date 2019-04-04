@@ -38,7 +38,10 @@ if ($q){
                             /* valid */
                              $_SESSION['email']=$email;
                              exit( header('Location: index.php') );
-          }
+          }else{
+		$_SESSION['loggin_in']=false;
+                             exit( header('Location: about.php') );
+		}
 }
    // $row = $q->fetch(PDO::FETCH_ASSOC);
    //if($row['num'] <1){
