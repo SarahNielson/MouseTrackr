@@ -14,6 +14,8 @@ $errors = array(); /* declare the array for later use */
             $errors[] = 'The username field must not be empty.';
 		$_SESSION['good'] = false;               
             $_SESSION['message'] = "=The username field must not be empty";
+	header('Location: about.php');
+		exit;
         }
          
         if(!isset($_POST['password']))
@@ -21,6 +23,8 @@ $errors = array(); /* declare the array for later use */
             $errors[] = 'The password field must not be empty.';
              $_SESSION['good'] = false;               
             $_SESSION['message'] = "=The password field must not be empty";
+		header('Location: about.php');
+		exit;
         }
          
         if(!empty($errors)) /*check for an empty array, if there are errors, they're in this array (note the ! operator)*/
