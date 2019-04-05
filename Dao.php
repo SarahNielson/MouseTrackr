@@ -15,7 +15,7 @@ public function getConnection(){
   }
   public function getUsers ($email, $password) {
     $conn = $this->getConnection();
-	 return $conn->query("select username from user where email= {$email} and password= {$password}", PDO::FETCH_ASSOC);
+	 return $conn->query("select name from user where email= {$email} and password= {$password}", PDO::FETCH_ASSOC);
   }
 
 public function getUser ($email, $password) {
