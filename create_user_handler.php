@@ -29,10 +29,14 @@ if (!$valid) {
     exit();
 }
 require_once 'Dao.php';
-//echo "CONGRATS YOU CREATE A USER";
 $dao = new Dao();
+$rows=$dao->getUser ($email, $password1);
+if($rows>0){
+	$messages[] = "There is already an account associated with that email. You can <a href="about.php">sign in</a> if you want.";
+  	$valid = false;
+}else{
 $dao->createUser ($username, $email, $password1);
 header("Location: about.php");
-
+}
 exit;
 ?>
