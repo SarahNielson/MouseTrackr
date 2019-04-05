@@ -46,12 +46,6 @@ $errors = array(); /* declare the array for later use */
 			$_SESSION['good']= true;
 			$_SESSION['message']= 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum 			overview</a>.';
     			header("Location: about.php");
-echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
-	echo "<table id='user'>";
-   	foreach ($user as $use) {
-     	echo "<tr><td>" . htmlspecialchars($use['email']) . "</td><td>{$use['password']}</td></tr>";
-   }
-echo "</table>";
 
 	}}
 ?>

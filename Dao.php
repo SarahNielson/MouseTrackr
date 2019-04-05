@@ -20,37 +20,15 @@ public function getConnection(){
 
 public function getUser ($email, $password) {
     $conn = $this->getConnection();
-	//return $conn->query("select username, password from user where email= {$email}", PDO::FETCH_ASSOC);
 $saveQuery= "select * from user where email= :email and password= :password";
-      $q = $conn->prepare($saveQuery);
-//if ($q){
-   $q->bindParam(":email", $email);
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":email", $email);
     $q->bindParam(":password", $password);
-  // $status= $q->execute();
-$q->execute();
- // if( !$status )throw new Exception('',3);
-   $rows=$q->rowCount();
+    $q->execute();
+     $rows=$q->rowCount();
 //if( !$rows > 0 )throw new Exception('',4);
-return $rows;
-    $result = $q->fetchObject();
-     $q->closeCursor();
-/* password_verify is available from PHP 5.5 onwards ~ I have 5.3.2 :( */
- // if( $result && function_exists('password_verify') && password_verify( $password, $result->password ) ){
-//if($password == $result->password ) ){
-                            /* valid */
-                            // $_SESSION['email']=$email;
-                             //exit( header('Location: index.php') );
-        //  }else{
-		//$_SESSION['logged_in']=false;
-                           //  exit( header('Location: about.php') );
-		//}
-//ifq}
-   // $row = $q->fetch(PDO::FETCH_ASSOC);
-   //if($row['num'] <1){
-        //die('That username doesn't exist!');
-   // }else{
-	//return conn->$query= ("select * from user where email= {$email} and password={$password}", PDO::FETCH_ASSOC);
-//}
+   return $rows;
+    
   }
 
   public function saveComment ($comment) {
