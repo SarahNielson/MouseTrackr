@@ -20,10 +20,11 @@ $saveQuery= "select name from user where email= :email and password= :password";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $email);
     $q->bindParam(":password", $password);
-    $q->execute();
 foreach ($conn->query($saveQuery) as $row) {
     return $row['name'];
 }
+    $q->execute();
+
   }
 
 public function getUser ($email, $password) {
