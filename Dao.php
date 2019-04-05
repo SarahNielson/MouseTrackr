@@ -16,12 +16,14 @@ public function getConnection(){
   public function getUsers ($email, $password) {
     $conn = $this->getConnection();
 	 //return $conn->query("select name from user where email= {$email} and password= {$password}", PDO::FETCH_ASSOC);
-$saveQuery= "select name as username from user where email= :email and password= :password";
+$saveQuery= "select name from user where email= :email and password= :password";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $email);
     $q->bindParam(":password", $password);
     $q->execute();
-return $q;
+foreach ($conn->query($saveQuery) as $row) {
+    return $row['name'];
+}
   }
 
 public function getUser ($email, $password) {
