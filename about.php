@@ -35,9 +35,10 @@ session_start();
     
 <?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
-    echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
-}else{ ?>
+if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
+   // echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
+//}else{ 
+?>
 <form method="post" action="create_user.php">
 <div><label id="create">New here? </label><input type="submit" value="Create New User"></div>
  </form>
@@ -52,6 +53,8 @@ if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
       <div><input type="submit" value="Login"></div>
     </form>
 <?php
+}else{
+echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
 }
       		if (isset($_SESSION['message'])) {
                 $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
