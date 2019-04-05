@@ -11,7 +11,7 @@ require_once 'Dao.php';
 $dao = new Dao();
 $rows=$dao->checkUser ($email, $password1);
 if($rows>0){
-	$messages[] = "There is already an account associated with that email.";
+	$messages[] = "There is already an account associated with that email. You can <a href="about.php">sign in</a> if you want.";
   	$valid = false;
 }
 if (empty($username)) {
