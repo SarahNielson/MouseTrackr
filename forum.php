@@ -40,7 +40,7 @@ require_once 'Dao.php';
    $comments = $dao->getComments();
    echo "<table id='comments'>";
    foreach ($comments as $comment) {
-     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>";
+     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td></tr>" . "</td><td>{$comment['userID']}</td></tr>";
    }
    echo "</table>";
 if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){

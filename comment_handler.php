@@ -1,6 +1,6 @@
 <?php
 session_start();
-//$_SESSION['logged_in'] = false;
+
 $comment = $_POST['comment'];
 // Good place to validate
 if (140 < strlen($comment)) {
