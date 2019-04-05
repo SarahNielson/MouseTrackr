@@ -14,6 +14,7 @@ $errors = array(); /* declare the array for later use */
         if(0 >= strlen($password) ||(0 >= strlen($email)))
         {
             $errors[] = 'The fields must not be empty.';
+          $_SESSION['form_input'] = $_POST;
              $_SESSION['good'] = false;               
             $_SESSION['message'] = "The the required fields must be filled.";
 		header('Location: about.php');
@@ -30,20 +31,21 @@ $errors = array(); /* declare the array for later use */
             }
             echo '</ul>';
         }else{
-	$dao = new Dao();
-	$user= $dao->getUser ($email, $password);
-	if(empty($user)){
-	$_SESSION['good']= false;
-	$_SESSION['message']= 'Invalid login credentials';
-    	header("Location: about.php");
-	}else{
-   	 $_SESSION['logged_in'] = true;
-	$_SESSION['email']= $email;
-	$_SESSION['password']=$password;
-     //$_SESSION['username']=htmlspecialchars($user['username']);
-$_SESSION['good']= true;
-$_SESSION['message']= 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';
-    	header("Location: about.php");
+		$dao = new Dao();
+		$user= $dao->getUser ($email, $password);
+		if(empty($user)){
+        		$_SESSION['form_input'] = $_POST;
+			$_SESSION['good']= false;
+			$_SESSION['message']= 'Invalid login credentials';
+    			header("Location: about.php");
+		}else{
+   			 $_SESSION['logged_in'] = true;
+			$_SESSION['email']= $email;
+			$_SESSION['password']=$password;
+   		      //$_SESSION['username']=htmlspecialchars($user['username']);
+			$_SESSION['good']= true;
+			$_SESSION['message']= 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum 			overview</a>.';
+    			header("Location: about.php");
 echo 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum overview</a>.';	
 	echo "<table id='user'>";
    	foreach ($user as $use) {
