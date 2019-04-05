@@ -21,6 +21,7 @@ $saveQuery= "select name as username from user where email= :email and password=
     $q->bindParam(":email", $email);
     $q->bindParam(":password", $password);
     $q->execute();
+return $q;
   }
 
 public function getUser ($email, $password) {
