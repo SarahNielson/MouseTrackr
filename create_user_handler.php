@@ -9,7 +9,7 @@ $messages = array();
 
 require_once 'Dao.php';
 $dao = new Dao();
-$rows=$dao->getUser ($email, $password1);
+$rows=$dao->checkUser ($email, $password1);
 if($rows>0){
 	$messages[] = "There is already an account associated with that email.";
   	$valid = false;

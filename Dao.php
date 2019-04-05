@@ -26,9 +26,16 @@ $saveQuery= "select * from user where email= :email and password= :password";
     $q->bindParam(":password", $password);
     $q->execute();
      $rows=$q->rowCount();
-//if( !$rows > 0 )throw new Exception('',4);
    return $rows;
-    
+  }
+public function checkUser ($email) {
+    $conn = $this->getConnection();
+$saveQuery= "select * from user where email= :email";
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":email", $email);
+    $q->execute();
+     $rows=$q->rowCount();
+   return $rows;
   }
 
   public function saveComment ($comment) {
@@ -48,9 +55,7 @@ $saveQuery= "select * from user where email= :email and password= :password";
     $q->bindParam(":email", $email);
     $q->bindParam(":password", $password);
     $q->execute();
-// $row = $q->fetch(PDO::FETCH_ASSOC);
-  //  if($row['num'] > 0){
-   //     die('That username already exists!');
+
 
   }
    
