@@ -57,6 +57,7 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
         echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
       }
       unset($_SESSION['message']);
+$_SESSION["logged_in"] = true;
       ?>
 
     </form>
