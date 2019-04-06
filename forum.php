@@ -14,7 +14,7 @@ require_once 'Dao.php';
 
 <nav>
 <ul>
-  <li><a href="index.php">Home</a></li>
+  <li><b><a href="index.php">MouseTrackr</a></b></li>
   <li class="dropdown">
     <a href="wdwcalendar.php" class="dropbtn">Walt Disney World Resort</a>
     <div class="dropdown-content">
