@@ -24,6 +24,7 @@ line-height:40px;
 width: 25%;
 margin-bottom:40px;
 padding:10;
+test-align:center;
 }
 #week-cal1{
 float:right;
@@ -32,6 +33,7 @@ width: 25%;
 margin-bottom:40px;
 margin-top:0;
 padding:10;
+text-align:center;
 }
 
 #day-cal{
