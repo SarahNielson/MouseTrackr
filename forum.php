@@ -10,10 +10,6 @@ require_once 'Dao.php';
 <head> 
     <link rel="stylesheet" href="style.css"> 
 <link rel="stylesheet" href="comments.css"> 
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-<script src="comments.js"></script>
 <script src="ajax.js"></script>
 <title>MouseTrackr</title> </head>
 
