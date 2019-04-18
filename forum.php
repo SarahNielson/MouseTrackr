@@ -51,8 +51,9 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
     echo '<span style="color:#660022;background-color:white;padding:5; margin:10;"><strong>You are not signed in. You can <a href="about.php">sign in</a> if you want to leave a comment.</strong></span>';
 
 }else{
+//<form method="post" action="comment_handler.php">
    ?>
-<form method="post" action="comment_handler.php">
+<form id="form">
 <div class="comment">Add a comment: <input type="text" name="comment">
 </div> <div class= "but"><input type="submit" value="Submit"></div>';
       <?php
