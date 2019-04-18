@@ -3,7 +3,7 @@
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-$salted = "2342453rgdfgdfsg4657" . $password;
+$salted = "2342453rgdfgdfsg4657" . $password . "@#!FDFfgd#@#$dfvr122";
 $hashed = md5($salted);
 
 require_once "Dao.php";

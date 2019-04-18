@@ -8,7 +8,7 @@ $valid = true;
 $messages = array();
 //$salted = "2342453rgdfgdfsg4657" . $password1 . "fg67drtgr5r6y4gt5";
 //$hashed = password_hash($salted, PASSWORD_BCRYPT);
-$salted = "2342453rgdfgdfsg4657" . $password1;
+$salted = "2342453rgdfgdfsg4657" . $password1 . "@#!FDFfgd#@#$dfvr122";
 $hashed = md5($salted);
 
 require_once 'Dao.php';
