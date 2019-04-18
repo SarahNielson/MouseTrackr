@@ -55,8 +55,8 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
 //<form method="post" action="comment_handler.php">
    ?>
 <form id="form">
-<div>Add a comment: <input type="text" id="comment" name="comment"></div> 
-<div><input type="submit" value="Submit"></div>';
+<div class= "comment">Add a comment: <input type="text" id="comment" name="comment"></div> 
+<div class= "but"><input type="submit" value="Submit"></div>
       <?php
     if (isset($_SESSION['message'])) {
         $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
