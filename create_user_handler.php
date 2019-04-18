@@ -6,10 +6,12 @@ $password1 = $_POST['password1'];
 $password2 = $_POST['password2'];
 $valid = true;
 $messages = array();
+$salted = "2342453rgdfgdfsg4657".$password1."fg67drtgr5r6y4gt5";
+$hashed = password_hash($salted, PASSWORD_BCRYPT);
 
 require_once 'Dao.php';
 $dao = new Dao();
-$rows=$dao->checkUser ($email, $password1);
+$rows=$dao->checkUser ($email, $hashed);
 if($rows>0){
 	$messages[] = "There is already an account associated with that email.";
   	$valid = false;
@@ -37,13 +39,7 @@ if (!$valid) {
     exit();
 }
 
-<<<<<<< HEAD
-$salted = "2342453rgdfgdfsg4657".$password1."fg67drtgr5r6y4gt5";
-$hashed = password_hash($salted, PASSWORD_BCRYPT);
 $dao->createUser ($username, $email, $hashed);
-=======
-$dao->createUser ($username, $email, $password1);
->>>>>>> 88d9b485ca40cfd89270ba29fa477e3cb2f6ea56
 header("Location: about.php");
 
 exit;
