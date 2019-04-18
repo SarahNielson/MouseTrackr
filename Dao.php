@@ -49,7 +49,6 @@ $saveQuery= "select * from user where email= :email";
 
  public function createUser ($userName, $email, $password) {
     $conn = $this->getConnection();
-    //$passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
     $saveQuery = "insert into user (name, email, password) values (:name, :email, :password)";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":name", $userName);

@@ -2,6 +2,7 @@
 session_start();
 
 $comment = $_POST['comment'];
+
 // Good place to validate
 if (140 < strlen($comment)) {
   //echo "comment was too long. please shorten it.";
@@ -19,7 +20,8 @@ if (0 >= strlen($comment)) {
   
 require_once 'Dao.php';
 $dao = new Dao();
-$dao->saveComment($comment);    
+$dao->saveComment($comment); 
+   
 $_SESSION["logged_in"] = true;         
 $_SESSION['message'] = "Thanks for posting!";
 $_SESSION['good'] = true;
