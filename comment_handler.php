@@ -14,6 +14,7 @@ header("Location: forum.php");
   exit;
 }
 if (0 >= strlen($comment)) {
+  $_SESSION['comment'] = "";
   $_SESSION['good'] = false;
   $_SESSION['message'] = "Please enter a comment";
   header("Location: forum.php");
