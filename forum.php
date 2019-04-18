@@ -39,7 +39,7 @@ require_once 'Dao.php';
 </nav>
  
 <?php require 'footer.html';?>
-<h2 class="comhead">Recent Comments:</h2>
+
 
  <?php
 if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
@@ -60,6 +60,7 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
     </form>
 
   <?php   }
+  echo "<h2 class="comhead">Recent Comments:</h2>";
    $comments = $dao->getComments();
    echo "<table id='comments'>";
    foreach ($comments as $comment) {
