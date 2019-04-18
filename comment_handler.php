@@ -8,13 +8,13 @@ if (140 < strlen($comment)) {
   //echo "comment was too long. please shorten it.";
   $_SESSION['message'] = "Comment was too long. Please shorten it.";
   $_SESSION['good'] = false;
-//header("Location: forum.php");
+header("Location: forum.php");
   exit;
 }
 if (0 >= strlen($comment)) {
   $_SESSION['good'] = false;
   $_SESSION['message'] = "Please enter a comment";
- // header("Location: forum.php");
+  header("Location: forum.php");
   exit;
 }
   
@@ -25,5 +25,5 @@ $dao->saveComment($comment);
 $_SESSION["logged_in"] = true;         
 $_SESSION['message'] = "Thanks for posting!";
 $_SESSION['good'] = true;
-//header('Location: forum.php');
+header('Location: forum.php');
 exit;
