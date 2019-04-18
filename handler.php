@@ -3,7 +3,8 @@
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-
+$salted = "2342453rgdfgdfsg4657".$password."fg67drtgr5r6y4gt5";
+$hashed = password_hash($salted, PASSWORD_BCRYPT);
 
 require_once "Dao.php";
 
@@ -32,17 +33,16 @@ $errors = array(); /* declare the array for later use */
             echo '</ul>';
         }else{
 		$dao = new Dao();
-		$user= $dao->getUser ($email, $password);
+		$user= $dao->getUser ($email, $hashed);
 		if(empty($user)){
         		$_SESSION['form_input'] = $_POST;
 			$_SESSION['good']= false;
 			$_SESSION['message']= 'Invalid login credentials';
     			header("Location: about.php");
 		}else{
-   			 $_SESSION['logged_in'] = true;
+   			$_SESSION['logged_in'] = true;
 			$_SESSION['email']= $email;
-			$_SESSION['password']=$password;
-   		      //$_SESSION['username']=$dao->getUsers ($email, $password);
+			//$_SESSION['password']=$password;
 			$_SESSION['good']= true;
 			$_SESSION['message']= 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum 			overview</a>.';
     			header("Location: about.php");

@@ -37,7 +37,9 @@ if (!$valid) {
     exit();
 }
 
-$dao->createUser ($username, $email, $password1);
+$salted = "2342453rgdfgdfsg4657".$password1."fg67drtgr5r6y4gt5";
+$hashed = password_hash($salted, PASSWORD_BCRYPT);
+$dao->createUser ($username, $email, $hashed);
 header("Location: about.php");
 
 exit;
