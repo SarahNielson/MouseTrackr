@@ -10,7 +10,7 @@ require_once 'Dao.php';
 <head> 
     <link rel="stylesheet" href="style.css"> 
 <link rel="stylesheet" href="comments.css"> 
-<script src="ajax.js"></script>
+<script src="comments.js"></script>
 <title>MouseTrackr</title> </head>
 
 <nav>
