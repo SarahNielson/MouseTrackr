@@ -37,8 +37,9 @@ require_once 'Dao.php';
   <li style="float:right"><a href="about.php">Account</a></li>
 </ul>
 </nav>
- 
-<?php require 'footer.html';
+ <h2 class="comhead">Recent Comments:</h2>
+<?php 
+include 'footer.html';
 if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
     echo '<span style="color:#660022;background-color:white;padding:5; margin:10;"><strong>You are not signed in. You can <a href="about.php">sign in</a> if you want to leave a comment.</strong></span>';
 }else{
@@ -59,7 +60,7 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
   <?php   }
   
    $comments = $dao->getComments();
-echo "<h2 class="comhead">Recent Comments:</h2>";
+//echo "<h2 class="comhead">Recent Comments:</h2>";
    echo "<table id='comments'>";
    foreach ($comments as $comment) {
      echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td>";
