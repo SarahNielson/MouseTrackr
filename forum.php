@@ -42,33 +42,34 @@ require_once 'Dao.php';
 <h2 class="comhead">Recent Comments:</h2>
 
  <?php
-   $comments = $dao->getComments();
-   echo "<table id='comments'>";
-   foreach ($comments as $comment) {
-     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td>";
-   }
-   echo "</table>";
 if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
     echo '<span style="color:#660022;background-color:white;padding:5; margin:10;"><strong>You are not signed in. You can <a href="about.php">sign in</a> if you want to leave a comment.</strong></span>';
-
 }else{
-//<form method="post" action="comment_handler.php">
-   ?>
-<form method="post" action="comment_handler.php">
-<div class= "comment">Add a comment: <input value="<?php echo isset($_SESSION['form_input']['comment']) ? $_SESSION['form_input']['comment'] : ''; ?>" type="text" id="comment" name="comment"></div> 
-<div class= "but"><input type="submit" value="Submit"></div>
+?>
+   <form method="post" action="comment_handler.php">
+  <div class= "comment">Add a comment: <input value="<?php echo isset($_SESSION['form_input']['comment']) ? $_SESSION    ['form_input']['comment'] : ''; ?>" type="text" id="comment" name="comment"></div> 
+  <div class= "but"><input type="submit" value="Submit"></div>
       <?php
     if (isset($_SESSION['message'])) {
         $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
         echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "<span class='close'>X</span></div>";
       }
       unset($_SESSION['message']);
-//$_SESSION["logged_in"] = true;
       ?>
 
     </form>
 
-  <?php   }?>
+  <?php   }
+   $comments = $dao->getComments();
+   echo "<table id='comments'>";
+   foreach ($comments as $comment) {
+     echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td>";
+   }
+   echo "</table>";
+
+	?>
+
+
   </body>
 </html>
 
