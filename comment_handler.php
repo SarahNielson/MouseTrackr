@@ -6,6 +6,7 @@ $comment = $_POST['comment'];
 // Good place to validate
 if (140 < strlen($comment)) {
   //echo "comment was too long. please shorten it.";
+  $_SESSION['form_input'] = $_POST;
   $_SESSION['comment'] = $comment;
   $_SESSION['message'] = "Comment is too long. Please shorten it.";
   $_SESSION['good'] = false;
