@@ -11,6 +11,9 @@ require_once 'Dao.php';
     <link rel="stylesheet" href="style.css"> 
 <link rel="stylesheet" href="comments.css"> 
 <script src="js/comments.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+<script src="js/ajax.js"></script>
 <title>MouseTrackr</title> </head>
 
 <nav>
