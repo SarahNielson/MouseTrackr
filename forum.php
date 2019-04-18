@@ -60,8 +60,9 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
     </form>
 
   <?php   }
-  echo "<h2 class="comhead">Recent Comments:</h2>";
+  
    $comments = $dao->getComments();
+   echo "<h2 class="comhead">Recent Comments:</h2>";
    echo "<table id='comments'>";
    foreach ($comments as $comment) {
      echo "<tr><td>" . htmlspecialchars($comment['comment_content']) . "</td><td>{$comment['date_created']}</td>";
