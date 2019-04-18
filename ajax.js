@@ -7,7 +7,6 @@ $(function() {
     $.ajax({
       type: "POST",
       url: "comment_handler.php",
-      data: values,
       success: function() {
         $('#comments tbody').prepend("<tr><td>" + 
           comment + "</td><td>Just now</td></tr>");
