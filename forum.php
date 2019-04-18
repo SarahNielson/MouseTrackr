@@ -10,6 +10,7 @@ require_once 'Dao.php';
 <head> 
     <link rel="stylesheet" href="style.css"> 
 <link rel="stylesheet" href="comments.css"> 
+<script src="js/comments.js"></script>
 <title>MouseTrackr</title> </head>
 
 <nav>
@@ -54,7 +55,7 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
       <?php
     if (isset($_SESSION['message'])) {
         $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
-        echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
+        echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "<span class='close'>X</span></div>";
       }
       unset($_SESSION['message']);
 $_SESSION["logged_in"] = true;
