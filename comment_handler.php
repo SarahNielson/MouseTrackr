@@ -29,6 +29,6 @@ $dao->saveComment($comment);
 $_SESSION["logged_in"] = true;         
 $_SESSION['message'] = "Thanks for posting!";
 $_SESSION['good'] = true;
-$_SESSION['comment'] = "";
+unset ($_SESSION['form_input']);
 header('Location: forum.php');
 exit;
