@@ -31,8 +31,6 @@ session_start();
       ?>
       <div><input type="submit" value="Create Account"></div>
     </form>
-<?php
-// require 'footer.html';
-?>
+
   </body>
 </html>
