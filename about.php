@@ -32,7 +32,7 @@ session_start();
 </nav>
 
   <body>
-    <h1>Login:</h1>
+    
     
 <?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
@@ -42,6 +42,7 @@ if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
 	<form method="post" action="create_user.php">
 	<div><label id="create">New here? </label><input type="submit" value="Create New User"></div>
  	</form>
+	<h1>Login:</h1>
 	 <form method="post" action="handler.php">
 	<div><label for="email">Email:</label>
       <input value="<?php echo isset($_SESSION['form_input']['email']) ? $_SESSION['form_input']['email'] : ''; ?>" type="text" 	id="email" name="email"></div>
