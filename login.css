@@ -7,10 +7,11 @@ div {
 }
 
 #message {
-  width: 300px;
+  width: 400px;
   padding: 10 10;
   margin: 10 10;
   color: white;
+text-align:center;
 }
 .good {
   background-color:#33ccff;
