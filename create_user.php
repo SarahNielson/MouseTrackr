@@ -26,8 +26,8 @@ session_start();
           echo "<div class='bad' id='message'><span class='close'>X</span>{$message}</div>";
         }
       }
-      unset($_SESSION['messages']);
-      unset($_SESSION['form_input']);
+      //unset($_SESSION['messages']);
+      //unset($_SESSION['form_input']);
       ?>
       <div><input type="submit" value="Create Account"></div>
     </form>
