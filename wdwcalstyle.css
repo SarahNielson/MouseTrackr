@@ -47,3 +47,8 @@ border-bottom:1px solid;
 #day{
 display:inline;
 }
+
+#weekid{
+display:inline;
+text-align:center;
+}
