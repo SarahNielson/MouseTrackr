@@ -23,7 +23,7 @@ session_start();
       <?php
       if (isset($_SESSION['messages'])) {
         foreach($_SESSION['messages'] as $message) {
-          echo "<div class='bad' id="message"><span class='close'>X</span>{$message}</div>";
+          echo "<div class='bad' id='message'><span class='close'>X</span>{$message}</div>";
         }
       }
       unset($_SESSION['messages']);
