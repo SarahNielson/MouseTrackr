@@ -50,8 +50,7 @@ display:inline;
 
 #weekid{
 display:inline;
- margin-left: auto;
-  margin-right: auto;
+justify-content: center;
 color:white;
 font-size:large;
 }
