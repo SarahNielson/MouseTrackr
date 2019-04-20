@@ -40,6 +40,7 @@ $errors = array(); /* declare the array for later use */
 			$_SESSION['message']= 'Invalid login credentials. Please try again or create an account.';
     			header("Location: about.php");
 		}else{
+			unset($_SESSION['form_input']);
 			$dao1 = new Dao();
 			$name = $dao1->getUsers ($email);
 			foreach ($name as $names) {
