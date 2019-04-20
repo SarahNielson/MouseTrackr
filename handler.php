@@ -47,7 +47,7 @@ $errors = array(); /* declare the array for later use */
 			$_SESSION['email']= $email;
 			//$_SESSION['password']=$password;
 			$_SESSION['good']= true;
-			$_SESSION['message']= 'Welcome, ' . $name['name'] . '. <a href="forum.php">Proceed to the forum 			overview</a>.';
+			$_SESSION['message']= 'Welcome, ' . htmlspecialchars($name['name']) . '. <a href="forum.php">Proceed to the forum overview</a>.';
     			header("Location: about.php");
 
 	}}
