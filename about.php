@@ -42,7 +42,7 @@ if (isset($_SESSION['message'])) {
       		unset($_SESSION['message']);
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
-    echo 'You are already signed in, you can <a style= "color:#00BFFF;" href="logout.php">sign out</a> if you want.';
+    echo 'You are already signed in, but you can <a style= "color:#00BFFF;" href="logout.php">sign out</a> if you want.';
 }else{ ?>
 	 <form method="post" action="handler.php">
 	<div><label for="email">Email:</label>
