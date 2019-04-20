@@ -23,10 +23,17 @@ text-align:center;
 .bad {
   background-color: red;
 }
+.close {
+  float:right;
+  position: relative;
+  top: -8px;
+  right: -5px;
+  cursor:pointer;
+color:black;
+}
 
-
-.highlight {
-  background-color: yellow;
+.disappear {
+  visibility:hidden;
 }
 table, td, th { 
   border: 2px solid black; 
