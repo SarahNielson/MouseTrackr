@@ -73,6 +73,7 @@ li:last-child {
 html {
     position: relative;
     min-height: 100%;
+font-family: 'Merienda', cursive;
 }
 
 body {
