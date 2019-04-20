@@ -49,6 +49,7 @@ if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
 <form method="post" action="create_user.php">
 	<div id="new"><label id="create">New here? </label><input type="submit" value="Create New User"></div>
  	</form>
+<span id="create"> New here? <a style="color:white;" href="create_user.php">Create a New User</a> </span>
 	<?php
 }
       		if (isset($_SESSION['message'])) {
