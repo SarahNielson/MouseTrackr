@@ -20,7 +20,7 @@ public function getConnection(){
     $q->bindParam(":email", $email);
     $q->execute();
     $array = $q->fetchAll(PDO::FETCH_COLUMN);
-
+	return $array;
   }
 
 public function getUser ($email, $password) {
