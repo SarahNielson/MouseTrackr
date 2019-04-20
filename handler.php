@@ -14,12 +14,12 @@ $errors = array(); /* declare the array for later use */
          
         if(0 >= strlen($password) ||(0 >= strlen($email)))
         {
-            $errors[] = 'The fields must not be empty.';
-          $_SESSION['form_input'] = $_POST;
+             $errors[] = 'The fields must not be empty.';
+             $_SESSION['form_input'] = $_POST;
              $_SESSION['good'] = false;               
-            $_SESSION['message'] = "The the required fields must be filled.";
-		header('Location: about.php');
-		exit;
+             $_SESSION['message'] = "The the required fields must be filled.";
+	     header('Location: about.php');
+	     exit;
         }
          
         if(!empty($errors)) /*check for an empty array, if there are errors, they're in this array (note the ! operator)*/
@@ -37,14 +37,17 @@ $errors = array(); /* declare the array for later use */
 		if(empty($user)){
         		$_SESSION['form_input'] = $_POST;
 			$_SESSION['good']= false;
-			$_SESSION['message']= 'Invalid login credentials';
+			$_SESSION['message']= 'Invalid login credentials. Please try again or create an account.';
     			header("Location: about.php");
 		}else{
+			$dao1 = new Dao();
+			$name = $dao1->getUsers ($email);
+			$_SESSION['name']= $name;
    			$_SESSION['logged_in'] = true;
 			$_SESSION['email']= $email;
 			//$_SESSION['password']=$password;
 			$_SESSION['good']= true;
-			$_SESSION['message']= 'Welcome, ' . $_SESSION['email'] . '. <a href="forum.php">Proceed to the forum 			overview</a>.';
+			$_SESSION['message']= 'Welcome, ' . $_SESSION['name'] . '. <a href="forum.php">Proceed to the forum 			overview</a>.';
     			header("Location: about.php");
 
 	}}

@@ -13,9 +13,10 @@ public function getConnection(){
     $conn = $this->getConnection();
     return $conn->query("select * from comment order by date_created desc", PDO::FETCH_ASSOC);
   }
-  public function getUsers ($email, $password) {
+  public function getUsers ($email) {
     $conn = $this->getConnection();
-	 return $conn->query("select name from user where email= {$email} and password= {$password}", PDO::FETCH_ASSOC);
+	 return $conn->query("select name from user where email= {$email}", PDO::FETCH_ASSOC);
+	
 
   }
 
