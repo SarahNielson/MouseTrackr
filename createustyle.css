@@ -24,7 +24,7 @@ div {
 }
 .close {
   float:right;
-  position: relative;
+  position: absolute;
   top: -8px;
   right: -5px;
   cursor:pointer;
