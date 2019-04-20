@@ -10,6 +10,15 @@ $messages = array();
 $salted = "2342453rgdfgdfsg4657" . $password1 . "@#!FDFfgd#@#$dfvr122";
 $hashed = md5($salted);
 
+if (empty($username)) {
+  $messages[] = "Please enter a valid username";
+  $valid = false;
+}
+if (empty($email)) {
+  $messages[] = "Please enter a valid email";
+  $valid = false;
+}
+
 require_once 'Dao.php';
 $dao = new Dao();
 $rows=$dao->checkUser ($email, $hashed);
@@ -17,14 +26,7 @@ if($rows>0){
 	$messages[] = "There is already an account associated with that email.";
   	$valid = false;
 }
-if (empty($username)) {
-  $messages[] = "Please enter a username";
-  $valid = false;
-}
-if (empty($email)) {
-  $messages[] = "Please enter an email";
-  $valid = false;
-}
+
 if (empty($password1)) {
   $messages[] = "Please set a password";
   $valid = false;
