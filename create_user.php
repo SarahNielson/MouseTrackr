@@ -1,8 +1,8 @@
 <?php
 session_start();
 //regular expression used to validate email address
-include 'nav.html';
 include 'footer.html';
+include 'nava.html';
 ?>
 
 <html>

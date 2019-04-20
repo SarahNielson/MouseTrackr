@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require 'nava.html';
 ?>
 <html>
 <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet" type="text/css">
@@ -12,26 +12,7 @@ session_start();
 
     <link rel="stylesheet" href="style.css"> 
   </head>
-<nav>
-<ul>
-  <li><b><a href="index.php">MouseTrackr</a></b></li>
-  <li class="dropdown">
-    <a href="wdwcalendar.php" class="dropbtn">Walt Disney World Resort</a>
-    <div class="dropdown-content">
-      <a href="mk.php">Magic Kingdom</a>
-      <a href="epcot.php">Epcot</a>
-      <a href="ak.php">Animal Kingdom</a>
-      <a href="hs.php">Hollywood Studios</a>
-    </div> </li>
-  <li class="dropdown"><a href="dlcalendar.php">Disneyland Resort</a>
-<div class="dropdown-content">
-      <a href="dlp.php">Disneyland Park</a>
-      <a href="ca.php">California Adventure</a>
-    </div> </li></li>
-  <li><a href="forum.php">Discussion</a></li>
-  <li style="float:right"><a class="active" href="about.php">Account</a></li>
-</ul>
-</nav>
+
 
   <body>
     <h1>Login:</h1>

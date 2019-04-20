@@ -8,26 +8,6 @@
 <title>Disneyland Resort</title> </head>
 
 
-<nav>
-<ul>
-  <li><b><a href="index.php">MouseTrackr</a></b></li>
-  <li class="dropdown">
-    <a href="wdwcalendar.php" class="dropbtn">Walt Disney World Resort</a>
-    <div class="dropdown-content">
-      <a href="mk.php">Magic Kingdom</a>
-      <a href="epcot.php">Epcot</a>
-      <a href="ak.php">Animal Kingdom</a>
-      <a href="hs.php">Hollywood Studios</a>
-    </div> </li>
-  <li class="dropdown"><a class="active" href="dlcalendar.php">Disneyland Resort</a>
-<div class="dropdown-content">
-      <a href="dlp.php">Disneyland Park</a>
-      <a href="ca.php">California Adventure</a>
-    </div> </li></li>
-  <li><a href="forum.php">Discussion</a></li>
-  <li style="float:right"><a href="about.php">Account</a></li>
-</ul>
-</nav>
 <div id= "weekid">Week of April 22nd-28th</div> 
 <div id="week-cal">
 <form action="dlp.php">
@@ -54,7 +34,9 @@
 <div id="day-cal"><div id="day">Su:</div> 8AM-10PM</div>
 </div>
 
-<?php require 'footer.html';?>
+<?php 
+require 'nav.html';
+include 'footer.html';?>
 <div class="weather">
 <!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/anaheim-1362"><img src="https://w.bookcdn.com/weather/picture/4_1362_0_1_137AE9_275_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=14027"  alt="booked.net"/></a><!-- weather widget end -->
 </div>
