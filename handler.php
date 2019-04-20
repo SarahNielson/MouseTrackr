@@ -42,11 +42,14 @@ $errors = array(); /* declare the array for later use */
 		}else{
 			$dao1 = new Dao();
 			$name = $dao1->getUsers ($email);
+				foreach ($name as $names) {
+     $_SESSION['name']= htmlspecialchars($names);
+   }
 			//$_SESSION['name']= $name['name'];
    			$_SESSION['logged_in'] = true;
 			$_SESSION['email']= $email;
 			$_SESSION['good']= true;
-			$_SESSION['message']= 'Welcome, ' . $name . '. <a href="forum.php">Proceed to the forum overview</a>.';
+			$_SESSION['message']= 'Welcome, ' . $_SESSION['name'] . '. <a href="forum.php">Proceed to the forum overview</a>.';
     			header("Location: about.php");
 
 	}}
