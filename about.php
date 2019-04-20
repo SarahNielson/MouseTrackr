@@ -37,7 +37,7 @@ session_start();
 <?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
-    echo 'You are already signed in, you can <a href="logout.php">sign out</a> if you want.';
+    echo 'You are already signed in, you can <a style= "color:#00BFFF;" href="logout.php">sign out</a> if you want.';
 }else{ ?>
 	 <form method="post" action="handler.php">
 	<div><label for="email">Email:</label>
@@ -49,7 +49,7 @@ if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
 <form method="post" action="create_user.php">
 	<div id="new"><label id="create">New here? </label><input style= "background-color:A29B9B;" type="submit" value="Create New User"></div>
  	</form>
-<span id="create"> New here? <a style="color:white;" href="create_user.php">Create a New User</a> </span>
+
 	<?php
 }
       		if (isset($_SESSION['message'])) {
