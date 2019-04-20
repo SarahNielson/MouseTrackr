@@ -2,10 +2,10 @@ html {
     position: relative;
     min-height: 100%;
 font-family: 'Handlee', cursive;
-margin-bottom: 30px;
 }   
 body {
   background-color: #CCCCCC;
+margin-bottom: 30px;
 }
 
 div {
@@ -67,6 +67,7 @@ font-weight:bold;
 }
 
 .footer {
+margin-bottom:0;
     position: absolute;
     bottom: 0;
     width: 100%;
