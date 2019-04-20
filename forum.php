@@ -39,7 +39,7 @@ require_once 'Dao.php';
 <?php 
 include 'footer.html';
 if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
-    echo '<span style="color:#660022;background-color:white;padding:5; margin:10;"><strong>You are not signed in. You can <a href="about.php">sign in</a> if you want to leave a comment.</strong></span>';
+    echo '<span style="color:#660022;background-color:white;padding:5; margin:10;"><strong>You are not signed in. Please <a href="about.php">sign in</a> if you want to leave a comment.</strong></span>';
 }else{
 ?>
    <form method="post" action="comment_handler.php">
