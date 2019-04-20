@@ -13,6 +13,7 @@ div {
   padding: 10 10;
   margin: 10 10;
   color: white;
+text-align:center;
 }
 
 .good {
@@ -23,10 +24,6 @@ div {
   background-color: red;
 }
 
-
-#blue_highlight {
-  background-color: blue;
-}
 
 .highlight {
   background-color: yellow;
@@ -44,13 +41,10 @@ table {
 }
 
 h1 {
-  font-family: Helvetica;
+  font-family: 'Handlee', cursive;
   font-size: 40px;
 }
-h1:hover { 
-  color: #FF00FF; 
-  visibility:hidden;
-}
+
 
 p {
   line-height: 30px;
