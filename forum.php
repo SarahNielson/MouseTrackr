@@ -6,6 +6,7 @@ require_once 'Dao.php';
 
 <html>
 <body background="forumback.jpg">
+<link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 <head> 
     <link rel="stylesheet" href="style.css"> 
