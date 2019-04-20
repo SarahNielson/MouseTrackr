@@ -54,7 +54,7 @@ if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
       <div><input type="submit" value="Login"></div>
   	  </form>
 <form method="post" action="create_user.php">
-<div id="new"> <span id="create"> New here? <a style="color:white;" href="create_user.php">Create New Account</a> </span></div>
+<div id="new"> <span id="create"> New here? <a style="color:white;" href="create_user.php">Create An Account</a> </span></div>
  	</form>
 
 	<?php
