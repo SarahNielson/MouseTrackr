@@ -49,8 +49,8 @@ display:inline;
 }
 
 #weekid{
-display:inline-block;
 color:white;
 font-size:large;
-text-align: center;
+text-align:center;
+padding-top:20;
 }
