@@ -35,6 +35,11 @@ session_start();
     <h1>Login:</h1>
     
 <?php
+if (isset($_SESSION['message'])) {
+                	$sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
+        		echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
+     		 }
+      		unset($_SESSION['message']);
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
     echo 'You are already signed in, you can <a style= "color:#00BFFF;" href="logout.php">sign out</a> if you want.';
@@ -52,11 +57,7 @@ if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
 
 	<?php
 }
-      		if (isset($_SESSION['message'])) {
-                	$sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
-        		echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
-     		 }
-      		unset($_SESSION['message']);
+      		
      		 ?>
   </body>
 
