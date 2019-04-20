@@ -17,6 +17,7 @@ Html, body {
 margin-top:20px;
 height:40px;
  width:100%;
+font-family: 'Handlee', cursive;
 }
 #week-cal{
 float:left;
