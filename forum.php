@@ -48,7 +48,7 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
       <?php
     if (isset($_SESSION['message'])) {
         $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
-        echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "<span class='close'>x</span></div>";
+        echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "<span class='close'>X</span></div>";
       }
       unset($_SESSION['message']);
       ?>
