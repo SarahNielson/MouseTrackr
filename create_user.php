@@ -5,8 +5,7 @@ session_start();
 
 <html>
 <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="closeMess.js"></script>
+
   <head>
     <link rel="stylesheet" href="createustyle.css">
   </head>
@@ -23,11 +22,11 @@ session_start();
       <?php
       if (isset($_SESSION['messages'])) {
         foreach($_SESSION['messages'] as $message) {
-          echo "<div class='bad' id='message'><span class='close'>X</span>{$message}</div>";
+          echo "<div class='bad' id='message'>{$message}</div>";
         }
       }
-      //unset($_SESSION['messages']);
-      //unset($_SESSION['form_input']);
+      unset($_SESSION['messages']);
+      unset($_SESSION['form_input']);
       ?>
       <div><input type="submit" value="Create Account"></div>
     </form>
