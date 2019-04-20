@@ -53,3 +53,6 @@ p {
   padding: 20px 5px;
   margin-bottom: 40px;
 }
+label{
+font-weight:bold;
+}
