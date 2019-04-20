@@ -12,7 +12,7 @@ require_once 'Dao.php';
     <link rel="stylesheet" href="style.css"> 
 <link rel="stylesheet" href="comments.css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="comments.js"></script>
+<script src="closeMess.js"></script>
 <title>MouseTrackr</title> </head>
 
 <nav>
@@ -48,7 +48,7 @@ if(!(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
       <?php
     if (isset($_SESSION['message'])) {
         $sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
-        echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "<span class='close'>X</span></div>";
+        echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "<span class='close'>x</span></div>";
       }
       unset($_SESSION['message']);
       ?>
