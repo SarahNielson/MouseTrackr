@@ -4,6 +4,8 @@ session_start();
 ?>
 <html>
 <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="closeMess.js"></script>
 <head>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="login.css">
@@ -35,9 +37,9 @@ session_start();
     <h1>Login:</h1>
     
 <?php
-if (isset($_SESSION['message'])) {
+		if (isset($_SESSION['message'])) {
                 	$sentiment = (isset($_SESSION['good']) && ($_SESSION['good'])) ? "good" : "bad";
-        		echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "</div>";
+        		echo "<div class='" . $sentiment . "' id='message'>" . $_SESSION['message'] . "<span class='close'>X</span></div>";
      		 }
       		unset($_SESSION['message']);
 // Check if the user is already logged in, if yes then redirect him to welcome page
