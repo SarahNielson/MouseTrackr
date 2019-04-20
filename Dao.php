@@ -15,8 +15,11 @@ public function getConnection(){
   }
   public function getUsers ($email) {
     $conn = $this->getConnection();
-	 return $conn->query("select name from user where email= {$email}", PDO::FETCH_ASSOC);
-	
+    $saveQuery= "select name from user where email= :email";
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":email", $email);
+    $q->execute();
+    $array = $q->fetchAll(PDO::FETCH_COLUMN);
 
   }
 
