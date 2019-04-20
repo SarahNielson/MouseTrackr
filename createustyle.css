@@ -8,7 +8,7 @@ div {
   margin-bottom:10px;
 }
 
-.message {
+#message {
   width: 300px;
   padding: 10 10;
   margin: 10 10;
