@@ -115,19 +115,24 @@ display:inline;
 }
 #epbut{
     background-image: url("epcot.jpg" );
+background-repeat: no-repeat;
 }
 #akbut{
     background-image: url("ak.png" );
+background-repeat: no-repeat;
 }
 
 #hsbut{
     background-image: url("hs.png" );
+background-repeat: no-repeat;
 }
 #dlbut{
     background-image: url("dl.png" );
+background-repeat: no-repeat;
 }
 #cabut{
     background-image: url("ca.png" );
+background-repeat: no-repeat;
 }
 form{
 display:inline;
