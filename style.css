@@ -111,28 +111,23 @@ display:inline;
 }
 #mkbut{
  
-    background-image: url("mk.jpg" );
+    background-image: url("mk.jpg" ) no-repeat;
 }
 #epbut{
-    background-image: url("epcot.jpg" );
-background-repeat: no-repeat;
+    background-image: url("epcot.jpg" ) no-repeat;
 }
 #akbut{
-    background-image: url("ak.png" );
-background-repeat: no-repeat;
+    background-image: url("ak.png" ) no-repeat;
 }
 
 #hsbut{
-    background-image: url("hs.png" );
-background-repeat: no-repeat;
+    background-image: url("hs.png" ) no-repeat;
 }
 #dlbut{
-    background-image: url("dl.png" );
-background-repeat: no-repeat;
+    background-image: url("dl.png" ) no-repeat;
 }
 #cabut{
-    background-image: url("ca.png" );
-background-repeat: no-repeat;
+    background-image: url("ca.png" ) no-repeat;
 }
 form{
 display:inline;
