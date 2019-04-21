@@ -14,7 +14,7 @@ require 'nava.html';
   </head>
 
 
-  <body background= "loginback.jpg">
+  <body>
     <h1>Login:</h1>
     
 <?php
