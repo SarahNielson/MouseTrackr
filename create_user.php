@@ -11,7 +11,7 @@ include 'nava.html';
   <head>
     <link rel="stylesheet" href="createustyle.css">
   </head>
-  <body background="disney1.png">
+  <body background="d1.jpg">
     <h1>New User Sign-Up:</h1>
     <form method="post" action="create_user_handler.php">
       <div><label for="username">Username:</label>
