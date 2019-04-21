@@ -28,7 +28,7 @@ if((isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true)){
     echo 'You are already signed in, but you can <a style= "color:#00BFFF;" href="logout.php">sign out</a> if you want.';
 }else{ ?>
 	 <form method="post" action="handler.php">
-	<div><label for="email">Email:</label>
+	<div><label for="email">Email:     </label>
       <input value="<?php echo isset($_SESSION['form_input']['email']) ? $_SESSION['form_input']['email'] : ''; ?>" type="text" 	id="email" name="email"></div>
       <div>Password: <input type="password" id="password" name="password"></div>
 		
