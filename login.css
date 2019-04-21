@@ -1,6 +1,8 @@
+html{
+background-image: url("loginback.jpg" );
+}
 body{
  color: white;
-  background-image: url("loginback.jpg" );
 }
 div {
   margin-bottom: 5px;
