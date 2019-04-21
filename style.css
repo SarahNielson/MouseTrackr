@@ -159,6 +159,7 @@ Html, body {
   background-size: cover;
 } 
 #welcome{
-color:blue;
+text-color:white;
+text-align:center;
 
 }
