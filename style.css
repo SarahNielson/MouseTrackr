@@ -110,16 +110,12 @@ display:inline;
   left: 0;
 }
 #mkbut{
- background repeat:no-repeat;
     background-image: url("mk.jpg" );
-
 }
 #epbut{
-background repeat:no-repeat;
     background-image: url("epcot.jpg" );
 }
 #akbut{
-background repeat:no-repeat;
     background-image: url("ak.png" );
 }
 
